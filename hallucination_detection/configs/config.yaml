@@ -1,0 +1,135 @@
+# WeakRAG-Detect Configuration
+# DSC 253 (Advanced Text Mining) — Weak Supervision Hallucination Detection
+# Extends LegalInsight (Self-RAG + EigenScore, 74.65% consistency baseline)
+
+seeds:
+  n_seeds: 30
+  strategy: stratified        # stratified | random
+  domains:
+    - legal
+    - medical
+    - scientific
+
+labeling_functions:
+  entailment:
+    model: "cross-encoder/nli-deberta-v3-small"
+    threshold: 0.5
+  consistency:
+    model: "sentence-transformers/all-MiniLM-L6-v2"
+    n_generations: 3
+    threshold_faithful: 0.85      # same as LegalInsight for comparability
+    threshold_hallucinated: 0.70  # same as LegalInsight for comparability
+    legalinsight_baseline: 0.7465 # 74.65% — LegalInsight 98-query average
+  reflection:
+    entity_weight: 0.5
+    numeric_weight: 0.3
+    hedging_weight: 0.2           # subtracted from grounding score
+    entity_overlap_low: 0.3       # below → HALLUCINATED
+    entity_overlap_high: 0.7      # above → FAITHFUL
+    grounding_threshold_faithful: 0.7
+    grounding_threshold_hallucinated: 0.3
+
+retrieval:
+  model: "BAAI/bge-m3"           # same model as LegalInsight
+  k: 5                            # top-k documents to retrieve
+  index_dir: "data/processed/"
+  batch_size: 64
+
+snorkel:
+  cardinality: 2
+  n_epochs: 500
+  lr: 0.001
+  seed: 42
+
+bootstrapping:
+  confidence_threshold: 0.85
+  max_iterations: 5
+  min_new_examples: 10
+  methods:
+    - self_training
+    - co_training
+
+co_training:
+  tfidf_max_features: 5000
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+
+majority_vote:
+  n_classifiers: 3
+  seeds:
+    - 42
+    - 123
+    - 456
+
+model:
+  base_model: "distilbert-base-uncased"
+  max_length: 512
+  batch_size: 16
+  learning_rate: 2.0e-5
+  epochs: 3
+  context_truncation: 300        # characters of context included in input
+
+evaluation:
+  n_gold_examples: 200
+  seed_sizes:
+    - 5
+    - 10
+    - 20
+    - 30
+    - 50
+    - 100
+    - 200
+  gold_test_path: "data/seeds/{domain}_gold_test.json"
+  log_path: "results/{domain}/evaluation_log.csv"
+
+datasets:
+  legal:
+    name: LegalBench-RAG
+    n_examples: 6858
+    hf_id: "nguyen-brat/legalbench-rag"
+    sources:
+      - CUAD
+      - ContractNLI
+      - MAUD
+      - PrivacyQA
+    query_types:
+      - termination
+      - party_id
+      - payment_terms
+      - liability
+      - confidentiality
+      - governing_law
+      - indemnification
+      - duration
+      - warranty
+      - dispute_resolution
+  medical:
+    name: PubMedQA
+    n_examples: 1000
+    hf_id: "qiaojin/PubMedQA"
+    split: "pqa_labeled"
+  scientific:
+    name: SciQ
+    n_examples: 13679
+    hf_id: "allenai/sciq"
+
+pattern_mining:
+  ngram_range:
+    - 2
+    - 3
+  top_k: 20
+  n_clusters: 6
+
+paths:
+  results_dir: "results/"
+  seeds_dir: "data/seeds/"
+  processed_dir: "data/processed/"
+  models_dir: "results/{domain}/models/"
+
+logging:
+  level: INFO
+  file: "results/experiment_log.txt"
+
+reproducibility:
+  random_seed: 42
+  torch_seed: 42
+  numpy_seed: 42
