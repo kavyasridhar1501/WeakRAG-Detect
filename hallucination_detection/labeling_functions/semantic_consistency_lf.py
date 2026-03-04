@@ -290,18 +290,32 @@ class SemanticConsistencyLF:
     ) -> List[str]:
         """Create proxy answer variants without an LLM.
 
-        Uses the original answer plus template-prefixed variants to
-        approximate the multi-temperature generation in LegalInsight.
-        """
-        # Trim answer to avoid repetitive long strings
-        short_answer = answer[:300].strip()
-        paraphrases = self._generate_paraphrases(question)
+        In LLM-free mode we cannot regenerate answers at different temperatures
+        (which is how LegalInsight measured self-consistency).  Instead we measure
+        *answer-context alignment*: split the context into sentences and compare
+        the given answer against those reference spans.  A faithful answer will be
+        semantically close to the context text that supports it; a hallucinated
+        answer containing wrong facts will be far away.
 
+        Falls back to question-paraphrase prefixing only when the context is empty.
+        """
         proxies = [answer]
-        if len(paraphrases) > 1:
-            proxies.append(f"{paraphrases[1]} {short_answer}")
-        if len(paraphrases) > 2:
-            proxies.append(f"{paraphrases[2]} {short_answer}")
+
+        # Extract non-trivial sentences from the context as reference spans.
+        context_sents = [
+            s.strip()
+            for s in context.replace("\n", " ").split(".")
+            if len(s.strip()) > 10
+        ]
+        for sent in context_sents[: self.n_generations - 1]:
+            proxies.append(sent)
+
+        # Fallback when context is empty or too short.
+        if len(proxies) < 2:
+            short = answer[:300].strip()
+            paraphrases = self._generate_paraphrases(question)
+            if len(paraphrases) > 1:
+                proxies.append(f"{paraphrases[1]} {short}")
 
         return proxies[: self.n_generations]
 

@@ -281,41 +281,126 @@ def main():
 def _make_synthetic_legal_data(n: int = 500) -> list:
     """Generate synthetic LegalBench-style data for smoke testing.
 
-    Hallucinated examples contain factually wrong information (wrong parties,
-    amounts, or dates) rather than just hedging prefixes, so that the NLI and
-    entity-overlap labeling functions can actually detect them.
+    Uses 8 templates, 6 party combinations, and varied faithful-answer
+    paraphrases so that a logistic-regression classifier cannot trivially
+    memorise the patterns from a handful of seeds.  Hallucinated examples
+    contain factually wrong information (wrong parties, amounts, or dates)
+    so that NLI and entity-overlap signals fire correctly.
     """
     import random
     random.seed(42)
+
+    # (question, context_template, [faithful_answer_variants], [wrong_fact_slots])
     templates = [
-        ("Who are the parties?", "This agreement is between {a} and {b}.", "{a} and {b}."),
-        ("When does the contract terminate?", "The contract terminates on {date}.", "It terminates on {date}."),
-        ("What is the payment amount?", "Payment of ${amount} is due within {days} days.", "${amount} due in {days} days."),
+        (
+            "Who are the parties to this agreement?",
+            "This agreement is entered into by and between {a} and {b}.",
+            ["{a} and {b}.", "The parties are {a} and {b}.", "{a} together with {b}."],
+            {"a": "{wrong_a}", "b": "{wrong_b}", "date": "Dec 31, 2025", "amount": "5000", "days": "30"},
+        ),
+        (
+            "When does the contract terminate?",
+            "The term of this contract shall end on {date}.",
+            ["The contract terminates on {date}.", "It ends on {date}.", "Termination date is {date}."],
+            {"a": "{pa}", "b": "{pb}", "date": "{wrong_date}", "amount": "5000", "days": "30"},
+        ),
+        (
+            "What is the total payment amount?",
+            "The Buyer agrees to pay a total of ${amount} to the Seller.",
+            ["The payment amount is ${amount}.", "A total of ${amount} is due.", "${amount} shall be paid."],
+            {"a": "{pa}", "b": "{pb}", "date": "Dec 31, 2025", "amount": "{wrong_amount}", "days": "30"},
+        ),
+        (
+            "How many days does the buyer have to pay?",
+            "Payment of ${amount} is due within {days} days of invoice.",
+            ["The buyer has {days} days to pay.", "Payment is due in {days} days.", "{days} days after invoice."],
+            {"a": "{pa}", "b": "{pb}", "date": "Dec 31, 2025", "amount": "5000", "days": "{wrong_days}"},
+        ),
+        (
+            "Which party is responsible for delivering the goods?",
+            "{a} shall be solely responsible for delivering all goods to {b}.",
+            ["{a} is responsible for delivery.", "Delivery is the obligation of {a}.", "{a} must deliver the goods."],
+            {"a": "{wrong_a}", "b": "{wrong_b}", "date": "Dec 31, 2025", "amount": "5000", "days": "30"},
+        ),
+        (
+            "What is the governing law of this agreement?",
+            "This agreement shall be governed by the laws of the State of {state}.",
+            ["The governing law is {state}.", "This contract is governed by {state} law.", "{state} law applies."],
+            {"a": "{pa}", "b": "{pb}", "date": "Dec 31, 2025", "amount": "5000", "days": "30",
+             "state": "{wrong_state}"},
+        ),
+        (
+            "What is the notice period for termination?",
+            "Either party may terminate this agreement upon {days} days written notice.",
+            ["The notice period is {days} days.", "Termination requires {days} days notice.",
+             "A {days}-day notice is required."],
+            {"a": "{pa}", "b": "{pb}", "date": "Dec 31, 2025", "amount": "5000", "days": "{wrong_days}"},
+        ),
+        (
+            "What is the confidentiality obligation?",
+            "{a} agrees to keep all information received from {b} strictly confidential.",
+            ["{a} must keep {b}'s information confidential.", "Confidentiality is required of {a}.",
+             "{a} shall not disclose {b}'s information."],
+            {"a": "{wrong_a}", "b": "{wrong_b}", "date": "Dec 31, 2025", "amount": "5000", "days": "30"},
+        ),
     ]
-    parties = [("Acme Corp", "Beta Ltd"), ("Delta Inc", "Gamma LLC"), ("Alpha Co", "Omega Ltd")]
-    wrong_dates = ["Mar 1, 2023", "Jun 15, 2024", "Sep 30, 2022"]
-    wrong_amounts = ["1000", "25000", "750"]
-    wrong_days = ["90", "7", "45"]
+
+    parties = [
+        ("Acme Corp", "Beta Ltd"),
+        ("Delta Inc", "Gamma LLC"),
+        ("Alpha Co", "Omega Ltd"),
+        ("Nexus Corp", "Prime Holdings"),
+        ("Vertex Inc", "Apex Partners"),
+        ("Solaris Ltd", "Meridian Group"),
+    ]
+    states = ["California", "New York", "Delaware", "Texas", "Illinois"]
+    wrong_states = ["Nevada", "Florida", "Washington", "Ohio", "Georgia"]
+    wrong_dates = ["Mar 1, 2023", "Jun 15, 2024", "Sep 30, 2022", "Feb 28, 2021", "Nov 11, 2020"]
+    wrong_amounts = ["1000", "25000", "750", "12500", "3333"]
+    wrong_days = ["90", "7", "45", "120", "14"]
+
     data = []
     for i in range(n):
         tmpl_idx = i % len(templates)
-        q_tmpl, c_tmpl, a_tmpl = templates[tmpl_idx]
+        q_tmpl, c_tmpl, faithful_variants, wrong_slots = templates[tmpl_idx]
         pa, pb = parties[i % len(parties)]
-        ctx = c_tmpl.format(a=pa, b=pb, date="Dec 31, 2025", amount="5000", days="30")
+        state = states[i % len(states)]
+
+        ctx = c_tmpl.format(a=pa, b=pb, date="Dec 31, 2025", amount="5000", days="30", state=state)
         label = 0 if i % 3 != 0 else 1
+
         if label == 0:
-            # Faithful: answer matches context exactly
-            ans = a_tmpl.format(a=pa, b=pb, date="Dec 31, 2025", amount="5000", days="30")
+            # Faithful: pick a varied paraphrase so the classifier can't memorise exact strings
+            variant = faithful_variants[i % len(faithful_variants)]
+            ans = variant.format(a=pa, b=pb, date="Dec 31, 2025", amount="5000", days="30", state=state)
         else:
-            # Hallucinated: use wrong facts that contradict the context
+            # Hallucinated: substitute wrong facts for one or more slots
             wrong_pa, wrong_pb = parties[(i // len(parties) + 1) % len(parties)]
-            ans = a_tmpl.format(
-                a=wrong_pa,
-                b=wrong_pb,
-                date=wrong_dates[i % len(wrong_dates)],
-                amount=wrong_amounts[i % len(wrong_amounts)],
-                days=wrong_days[i % len(wrong_days)],
+            wrong_state = wrong_states[i % len(wrong_states)]
+            slot_vals = {
+                "pa": pa, "pb": pb, "state": state,
+                "wrong_a": wrong_pa, "wrong_b": wrong_pb,
+                "wrong_date": wrong_dates[i % len(wrong_dates)],
+                "wrong_amount": wrong_amounts[i % len(wrong_amounts)],
+                "wrong_days": wrong_days[i % len(wrong_days)],
+                "wrong_state": wrong_state,
+            }
+            # Render the "wrong" template by first expanding {wrong_x} slots,
+            # then formatting as if it were a normal answer.
+            variant = faithful_variants[i % len(faithful_variants)]
+            filled_slot = {
+                k: v.format(**slot_vals) if isinstance(v, str) else v
+                for k, v in wrong_slots.items()
+            }
+            ans = variant.format(
+                a=filled_slot.get("a", pa),
+                b=filled_slot.get("b", pb),
+                date=filled_slot.get("date", "Dec 31, 2025"),
+                amount=filled_slot.get("amount", "5000"),
+                days=filled_slot.get("days", "30"),
+                state=filled_slot.get("state", state),
             )
+
         data.append({
             "id": f"legal_{i}", "question": q_tmpl, "context": ctx,
             "answer": ans, "label": label, "domain": "legal", "source": "synthetic",
