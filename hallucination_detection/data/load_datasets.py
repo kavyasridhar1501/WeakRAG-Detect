@@ -91,6 +91,21 @@ def load_legalbench_rag() -> List[dict]:
         logger.info("Falling back to CUAD (real legal contract QA) …")
         try:
             raw = load_dataset("theatticusproject/cuad", verification_mode="no_checks")
+            # Drop PDF columns to avoid pdfplumber dependency
+            def _drop_pdf_cols(ds):
+                from datasets import Pdf
+                pdf_cols = [c for c, f in ds.features.items()
+                            if isinstance(f, Pdf)]
+                if pdf_cols:
+                    logger.info("Dropping PDF columns from CUAD: %s", pdf_cols)
+                    ds = ds.remove_columns(pdf_cols)
+                return ds
+            if hasattr(raw, "items"):
+                raw = {k: _drop_pdf_cols(v) for k, v in raw.items()}
+                from datasets import DatasetDict
+                raw = DatasetDict(raw)
+            else:
+                raw = _drop_pdf_cols(raw)
             logger.info("Loaded CUAD as legal dataset fallback")
         except Exception as exc:
             logger.warning("CUAD fallback failed: %s", exc)
