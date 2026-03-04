@@ -67,8 +67,15 @@ def main():
         unlabeled_pool, n_seeds=N_SEEDS, domain="legal", strategy="stratified"
     )
     gold_labels = [ex["label"] for ex in gold_test]
-    logger.info("Gold test: %d | Seed data: %d | Unlabeled pool: %d",
-                len(gold_test), len(seed_data), len(unlabeled_pool))
+
+    # Reserve a small held-out val split from seed_data for bootstrapping callbacks.
+    # Using gold_test for validation leaks test-time information into training.
+    import math
+    n_val = max(10, math.ceil(0.2 * len(seed_data)))
+    val_data = seed_data[:n_val]
+    seed_data = seed_data[n_val:]
+    logger.info("Gold test: %d | Seed data: %d | Val: %d | Unlabeled pool: %d",
+                len(gold_test), len(seed_data), len(val_data), len(unlabeled_pool))
 
     # ------------------------------------------------------------------
     # Step 2: Build FAISS retriever (port from LegalInsight)
@@ -138,7 +145,7 @@ def main():
         confidence_threshold=0.85,
         max_iterations=5,
     )
-    st_result = self_trainer.fit(seed_data, unlabeled_pool, soft_labels, gold_test[:50])
+    st_result = self_trainer.fit(seed_data, unlabeled_pool, soft_labels, val_data)
     self_preds = st_result["final_model"].predict(gold_test)
     evaluator.evaluate(self_preds.tolist(), gold_labels, "Self-Training", "legal")
 
@@ -148,7 +155,7 @@ def main():
     logger.info("Step 8: Co-training bootstrapping …")
     from bootstrapping.co_training import CoTrainer
     co_trainer = CoTrainer(confidence_threshold=0.85, max_iterations=5)
-    co_result = co_trainer.fit(seed_data, unlabeled_pool, soft_labels, gold_test[:50])
+    co_result = co_trainer.fit(seed_data, unlabeled_pool, soft_labels, val_data)
     co_preds = co_result["final_model"].predict(gold_test)
     evaluator.evaluate(co_preds.tolist(), gold_labels, "Co-Training", "legal")
 
@@ -162,8 +169,8 @@ def main():
         distilbert.train(
             st_result["labeled_pool"],
             st_result["labels"],
-            val_data=gold_test[:50],
-            val_labels=gold_labels[:50],
+            val_data=val_data,
+            val_labels=[d["label"] for d in val_data],
             save_dir=os.path.join(RESULTS_DIR, "distilbert_ckpt"),
         )
         distilbert_preds = distilbert.predict(gold_test)
@@ -173,11 +180,14 @@ def main():
         logger.warning("DistilBERT training skipped: %s", exc)
 
     # ------------------------------------------------------------------
-    # Step 10: Fully supervised baseline
+    # Step 10: Fully supervised baseline (oracle upper bound)
+    # Train on unlabeled_pool with true labels + seeds; test on gold_test.
     # ------------------------------------------------------------------
     logger.info("Step 10: Fully supervised baseline …")
+    sup_train = seed_data + unlabeled_pool
+    sup_train_labels = [d["label"] for d in seed_data] + [d["label"] for d in unlabeled_pool]
     sup_clf = LogisticRegressionClassifier()
-    sup_clf.fit(gold_test, gold_labels)
+    sup_clf.fit(sup_train, sup_train_labels)
     sup_preds = sup_clf.predict(gold_test)
     evaluator.evaluate(sup_preds.tolist(), gold_labels, "Fully Supervised", "legal")
 
@@ -265,7 +275,12 @@ def main():
 
 
 def _make_synthetic_legal_data(n: int = 500) -> list:
-    """Generate synthetic LegalBench-style data for smoke testing."""
+    """Generate synthetic LegalBench-style data for smoke testing.
+
+    Hallucinated examples contain factually wrong information (wrong parties,
+    amounts, or dates) rather than just hedging prefixes, so that the NLI and
+    entity-overlap labeling functions can actually detect them.
+    """
     import random
     random.seed(42)
     templates = [
@@ -274,17 +289,32 @@ def _make_synthetic_legal_data(n: int = 500) -> list:
         ("What is the payment amount?", "Payment of ${amount} is due within {days} days.", "${amount} due in {days} days."),
     ]
     parties = [("Acme Corp", "Beta Ltd"), ("Delta Inc", "Gamma LLC"), ("Alpha Co", "Omega Ltd")]
+    wrong_dates = ["Mar 1, 2023", "Jun 15, 2024", "Sep 30, 2022"]
+    wrong_amounts = ["1000", "25000", "750"]
+    wrong_days = ["90", "7", "45"]
     data = []
     for i in range(n):
-        q_tmpl, c_tmpl, a_tmpl = random.choice(templates)
-        pa, pb = random.choice(parties)
+        tmpl_idx = i % len(templates)
+        q_tmpl, c_tmpl, a_tmpl = templates[tmpl_idx]
+        pa, pb = parties[i % len(parties)]
         ctx = c_tmpl.format(a=pa, b=pb, date="Dec 31, 2025", amount="5000", days="30")
-        ans = a_tmpl.format(a=pa, b=pb, date="Dec 31, 2025", amount="5000", days="30")
         label = 0 if i % 3 != 0 else 1
+        if label == 0:
+            # Faithful: answer matches context exactly
+            ans = a_tmpl.format(a=pa, b=pb, date="Dec 31, 2025", amount="5000", days="30")
+        else:
+            # Hallucinated: use wrong facts that contradict the context
+            wrong_pa, wrong_pb = parties[(i // len(parties) + 1) % len(parties)]
+            ans = a_tmpl.format(
+                a=wrong_pa,
+                b=wrong_pb,
+                date=wrong_dates[i % len(wrong_dates)],
+                amount=wrong_amounts[i % len(wrong_amounts)],
+                days=wrong_days[i % len(wrong_days)],
+            )
         data.append({
             "id": f"legal_{i}", "question": q_tmpl, "context": ctx,
-            "answer": ans if label == 0 else f"I believe {ans}",
-            "label": label, "domain": "legal", "source": "synthetic",
+            "answer": ans, "label": label, "domain": "legal", "source": "synthetic",
         })
     return data
 
