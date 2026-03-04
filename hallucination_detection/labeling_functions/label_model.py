@@ -173,9 +173,9 @@ class WeakLabelPipeline:
         SnorkelLabelModel | _MajorityVoteModel
         """
         if _SNORKEL_AVAILABLE:
-            logger.info("Fitting Snorkel LabelModel (n_epochs=500) …")
-            model = SnorkelLabelModel(cardinality=2, verbose=True)
-            model.fit(L_train=L, n_epochs=500, lr=0.001, seed=42)
+            logger.info("Fitting Snorkel LabelModel (n_epochs=100) …")
+            model = SnorkelLabelModel(cardinality=2, verbose=False)
+            model.fit(L_train=L, n_epochs=100, lr=0.001, seed=42)
             logger.info("Snorkel LabelModel training complete.")
             return model
         else:
