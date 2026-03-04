@@ -10,6 +10,10 @@ import logging
 import os
 import sys
 
+# Must be set before any tokenizer/torch import to prevent MPS fork segfault on macOS
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+
 import numpy as np
 
 # Allow package-level imports

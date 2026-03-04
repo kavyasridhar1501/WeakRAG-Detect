@@ -82,7 +82,7 @@ class WeakLabelPipeline:
         # --- LF 0: Entailment ---
         try:
             pairs = [(ex.get("context", ""), ex.get("answer", "")) for ex in examples]
-            entailment_labels = self.entailment_lf.label_batch(pairs)
+            entailment_labels = self.entailment_lf.label_batch(pairs, batch_size=8)
             for i, lbl in enumerate(entailment_labels):
                 L[i, 0] = lbl
             logger.info("EntailmentLF done.")
