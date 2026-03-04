@@ -136,13 +136,17 @@ def main():
         logger.warning("Pattern mining skipped: %s", exc)
 
     # ------------------------------------------------------------------
-    # Step 8: Label efficiency curve
+    # Step 8: Label efficiency curve (opt-in — set RUN_LABEL_EFFICIENCY=1)
     # ------------------------------------------------------------------
-    try:
-        from evaluation.label_efficiency import plot_label_efficiency_curve
-        plot_label_efficiency_curve("medical", gold_test, unlabeled_pool, data, save_dir=RESULTS_DIR)
-    except Exception as exc:
-        logger.warning("Label efficiency curve skipped: %s", exc)
+    import os as _os
+    if _os.environ.get("RUN_LABEL_EFFICIENCY", "0") == "1":
+        try:
+            from evaluation.label_efficiency import plot_label_efficiency_curve
+            plot_label_efficiency_curve("medical", gold_test, unlabeled_pool, data, save_dir=RESULTS_DIR)
+        except Exception as exc:
+            logger.warning("Label efficiency curve skipped: %s", exc)
+    else:
+        logger.info("Label efficiency curve skipped (set RUN_LABEL_EFFICIENCY=1 to run).")
 
     evaluator.compare_methods("medical")
     print(f"\nResults saved to {RESULTS_DIR}")

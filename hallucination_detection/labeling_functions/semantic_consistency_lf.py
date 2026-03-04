@@ -217,7 +217,7 @@ class SemanticConsistencyLF:
     # ------------------------------------------------------------------
 
     def label_batch(self, examples: List[dict]) -> List[Tuple[int, float]]:
-        """Batch-label a list of examples.
+        """Batch-label a list of examples with a single encoder pass.
 
         Parameters
         ----------
@@ -229,18 +229,56 @@ class SemanticConsistencyLF:
         List[Tuple[int, float]]
             (label, consistency_score) per example.
         """
-        results: List[Tuple[int, float]] = []
+        # Build all proxy-answer groups first, then encode everything in one call.
+        all_groups: List[List[str]] = []
         for ex in examples:
             try:
-                lbl, score = self.label(
+                proxies = self._generate_proxy_answers(
                     ex.get("question", ""),
                     ex.get("context", ""),
                     ex.get("answer", ""),
                 )
+                all_groups.append(proxies)
+            except Exception:
+                all_groups.append([ex.get("answer", "")])
+
+        # Flatten for a single encoder call
+        flat_texts = [text for group in all_groups for text in group]
+        try:
+            flat_embeddings = self.encoder.encode(
+                flat_texts, convert_to_numpy=True, normalize_embeddings=True,
+                show_progress_bar=len(flat_texts) > 50,
+            )
+        except Exception as exc:
+            logger.warning("Batch encode failed, falling back to per-item: %s", exc)
+            flat_embeddings = None
+
+        results: List[Tuple[int, float]] = []
+        offset = 0
+        for group in all_groups:
+            n = len(group)
+            try:
+                if flat_embeddings is not None:
+                    embeddings = flat_embeddings[offset: offset + n]
+                    sim_values = []
+                    for i, j in combinations(range(len(embeddings)), 2):
+                        sim_values.append(float(np.dot(embeddings[i], embeddings[j])))
+                    score = float(np.mean(sim_values)) if sim_values else 1.0
+                else:
+                    score = self._compute_consistency_score(group)
+
+                if score >= self.threshold_faithful:
+                    lbl = self.FAITHFUL
+                elif score < self.threshold_hallucinated:
+                    lbl = self.HALLUCINATED
+                else:
+                    lbl = self.ABSTAIN
                 results.append((lbl, score))
             except Exception as exc:
-                logger.warning("Batch item failed: %s", exc)
+                logger.warning("Batch item scoring failed: %s", exc)
                 results.append((self.ABSTAIN, 0.0))
+            offset += n
+
         return results
 
     # ------------------------------------------------------------------

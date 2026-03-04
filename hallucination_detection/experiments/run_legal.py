@@ -203,18 +203,23 @@ def main():
         logger.warning("Pattern mining skipped: %s", exc)
 
     # ------------------------------------------------------------------
-    # Step 12: Label efficiency curve
+    # Step 12: Label efficiency curve (opt-in — re-runs full NLI pipeline
+    # 7 times; set RUN_LABEL_EFFICIENCY=1 in env to enable)
     # ------------------------------------------------------------------
-    logger.info("Step 12: Label efficiency curve …")
-    try:
-        from evaluation.label_efficiency import plot_label_efficiency_curve
-        plot_label_efficiency_curve(
-            "legal", gold_test, unlabeled_pool, data,
-            seed_sizes=[5, 10, 20, 30, 50, 100, 200],
-            save_dir=RESULTS_DIR,
-        )
-    except Exception as exc:
-        logger.warning("Label efficiency curve skipped: %s", exc)
+    import os as _os
+    if _os.environ.get("RUN_LABEL_EFFICIENCY", "0") == "1":
+        logger.info("Step 12: Label efficiency curve …")
+        try:
+            from evaluation.label_efficiency import plot_label_efficiency_curve
+            plot_label_efficiency_curve(
+                "legal", gold_test, unlabeled_pool, data,
+                seed_sizes=[5, 10, 20, 30, 50, 100, 200],
+                save_dir=RESULTS_DIR,
+            )
+        except Exception as exc:
+            logger.warning("Label efficiency curve skipped: %s", exc)
+    else:
+        logger.info("Step 12: Label efficiency curve skipped (set RUN_LABEL_EFFICIENCY=1 to run).")
 
     # ------------------------------------------------------------------
     # Step 13: Consistency score comparison to LegalInsight
