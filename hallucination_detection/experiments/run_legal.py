@@ -138,9 +138,6 @@ def main():
     self_preds = st_result["final_model"].predict(gold_test)
     evaluator.evaluate(self_preds.tolist(), gold_labels, "Self-Training", "legal")
 
-    # Save bootstrap state for Flask API
-    _save_bootstrap_state("legal", st_result)
-
     # ------------------------------------------------------------------
     # Step 8: Co-training bootstrapping
     # ------------------------------------------------------------------
@@ -235,6 +232,16 @@ def main():
         logger.warning("Consistency comparison failed: %s", exc)
         new_consistency = 0.0
 
+    consistency_summary = {
+        "legalinsight_baseline": LEGALINSIGHT_BASELINE,
+        "new_system_consistency": round(new_consistency, 4),
+        "improvement": round(new_consistency - LEGALINSIGHT_BASELINE, 4),
+    }
+    summary_path = os.path.join(RESULTS_DIR, "consistency_summary.json")
+    with open(summary_path, "w") as f:
+        json.dump(consistency_summary, f, indent=2)
+    logger.info("Saved consistency summary to %s", summary_path)
+
     print(f"\n{'=' * 60}")
     print(f"LegalInsight baseline consistency : {LEGALINSIGHT_BASELINE:.2%}")
     print(f"New system consistency            : {new_consistency:.2%}")
@@ -246,26 +253,6 @@ def main():
     # ------------------------------------------------------------------
     evaluator.compare_methods("legal")
     print(f"\nResults saved to {RESULTS_DIR}")
-
-
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-def _save_bootstrap_state(domain: str, result: dict) -> None:
-    """Persist bootstrapping state for Flask API."""
-    history = result.get("training_history", [])
-    last = history[-1] if history else {}
-    state = {
-        "iteration": last.get("iteration", 0),
-        "train_size": last.get("train_size", 0),
-        "val_f1": last.get("val_f1", 0.0),
-        "newly_labeled": last.get("newly_labeled", 0),
-    }
-    os.makedirs(os.path.join(os.path.dirname(__file__), "..", "results", domain), exist_ok=True)
-    path = os.path.join(os.path.dirname(__file__), "..", "results", domain, "bootstrap_state.json")
-    with open(path, "w") as f:
-        json.dump(state, f, indent=2)
 
 
 def _make_synthetic_legal_data(n: int = 500) -> list:

@@ -6,6 +6,7 @@ Logs results to both console and CSV for comparison across methods.
 """
 
 import csv
+import json
 import logging
 import os
 from typing import Dict, List, Optional
@@ -140,6 +141,13 @@ class HallucinationEvaluator:
         if not rows:
             print("No evaluation results found.")
             return
+
+        # Save comparison table as JSON
+        json_path = os.path.join(RESULTS_DIR, domain, "results_summary.json")
+        os.makedirs(os.path.dirname(json_path), exist_ok=True)
+        with open(json_path, "w") as f:
+            json.dump({"domain": domain, "results": rows}, f, indent=2)
+        logger.info("Saved results summary to %s", json_path)
 
         # Print table
         header = f"\n{'Method':<35} {'Precision':>10} {'Recall':>8} {'F1':>8} {'Accuracy':>10}"
