@@ -90,7 +90,7 @@ def load_legalbench_rag() -> List[dict]:
     if raw is None:
         logger.info("Falling back to CUAD (real legal contract QA) …")
         try:
-            raw = load_dataset("theatticusproject/cuad")
+            raw = load_dataset("theatticusproject/cuad", verification_mode="no_checks")
             logger.info("Loaded CUAD as legal dataset fallback")
         except Exception as exc:
             logger.warning("CUAD fallback failed: %s", exc)
