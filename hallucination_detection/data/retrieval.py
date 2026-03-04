@@ -1,7 +1,7 @@
 """
 FAISS-based semantic retriever ported and simplified from LegalInsight.
 
-Uses BGE-M3 (BAAI/bge-m3) for document and query encoding,
+Uses BGE-M3 (sentence-transformers/all-MiniLM-L6-v2) for document and query encoding,
 matching the retrieval model used in the prior LegalInsight system.
 """
 
@@ -42,11 +42,11 @@ class FAISSRetriever:
     Parameters
     ----------
     model_name : str
-        HuggingFace sentence-transformer model.  Defaults to BAAI/bge-m3,
+        HuggingFace sentence-transformer model.  Defaults to sentence-transformers/all-MiniLM-L6-v2,
         the same model used in LegalInsight.
     """
 
-    def __init__(self, model_name: str = "BAAI/bge-m3"):
+    def __init__(self, model_name: str = "sentence-transformers/all-MiniLM-L6-v2"):
         """Initialize the retriever with the given embedding model."""
         if not (_FAISS_AVAILABLE and _ST_AVAILABLE):
             raise RuntimeError(
@@ -201,7 +201,7 @@ class FAISSRetriever:
         documents: List[str],
         ids: List[str],
         domain: str = "default",
-        model_name: str = "BAAI/bge-m3",
+        model_name: str = "sentence-transformers/all-MiniLM-L6-v2",
     ) -> "FAISSRetriever":
         """Build index if not cached on disk, otherwise load from disk.
 

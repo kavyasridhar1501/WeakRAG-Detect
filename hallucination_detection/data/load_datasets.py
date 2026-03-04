@@ -72,24 +72,33 @@ def load_legalbench_rag() -> List[dict]:
 
     # Primary HuggingFace identifier; fall back to alternative on failure.
     hf_candidates = [
-        ("nguyen-brat/legalbench-rag", None),
-        ("rcadene/legalbench", None),
+        "nguyen-brat/legalbench-rag",
+        "rcadene/legalbench",
+        "hazyresearch/legalbench",
+        "nguyen-brat/legalbench",
     ]
 
     raw = None
-    for hf_id, split in hf_candidates:
+    for hf_id in hf_candidates:
         try:
-            raw = load_dataset(hf_id, split=split, trust_remote_code=True)
+            raw = load_dataset(hf_id)
             logger.info("Loaded LegalBench-RAG from %s", hf_id)
             break
         except Exception as exc:
             logger.warning("Failed to load %s: %s", hf_id, exc)
 
     if raw is None:
+        logger.info("Falling back to CUAD (real legal contract QA) …")
+        try:
+            raw = load_dataset("theatticusproject/cuad")
+            logger.info("Loaded CUAD as legal dataset fallback")
+        except Exception as exc:
+            logger.warning("CUAD fallback failed: %s", exc)
+
+    if raw is None:
         logger.warning(
-            "Could not load LegalBench-RAG from HuggingFace. "
-            "Returning empty list — place raw files in data/raw/legalbench_rag/ "
-            "or install the correct dataset identifier."
+            "Could not load any legal dataset from HuggingFace. "
+            "Returning empty list — synthetic data will be used as smoke test."
         )
         return records
 
@@ -170,7 +179,7 @@ def load_pubmedqa() -> List[dict]:
     records: List[dict] = []
 
     try:
-        raw = load_dataset("qiaojin/PubMedQA", "pqa_labeled", trust_remote_code=True)
+        raw = load_dataset("qiaojin/PubMedQA", "pqa_labeled")
     except Exception as exc:
         logger.warning("Failed to load PubMedQA: %s", exc)
         return records
@@ -231,7 +240,7 @@ def load_sciq() -> List[dict]:
     records: List[dict] = []
 
     try:
-        raw = load_dataset("allenai/sciq", trust_remote_code=True)
+        raw = load_dataset("allenai/sciq")
     except Exception as exc:
         logger.warning("Failed to load SciQ: %s", exc)
         return records
