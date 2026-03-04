@@ -30,7 +30,7 @@ labeling_functions:
     grounding_threshold_hallucinated: 0.3
 
 retrieval:
-  model: "BAAI/bge-m3"           # same model as LegalInsight
+  model: "sentence-transformers/all-MiniLM-L6-v2"  # lightweight ~90MB retriever
   k: 5                            # top-k documents to retrieve
   index_dir: "data/processed/"
   batch_size: 64
