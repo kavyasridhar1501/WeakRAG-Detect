@@ -108,6 +108,10 @@ def main():
     # Step 4: Evaluator
     # ------------------------------------------------------------------
     from evaluation.metrics import HallucinationEvaluator
+    # Remove stale CSV log so compare_methods only shows this run's results.
+    _stale_log = os.path.join(RESULTS_DIR, "evaluation_log.csv")
+    if os.path.exists(_stale_log):
+        os.remove(_stale_log)
     evaluator = HallucinationEvaluator()
 
     # ------------------------------------------------------------------
