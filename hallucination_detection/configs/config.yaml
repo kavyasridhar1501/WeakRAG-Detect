@@ -12,7 +12,7 @@ seeds:
 
 labeling_functions:
   entailment:
-    model: "cross-encoder/nli-deberta-v3-small"
+    model: "cross-encoder/nli-MiniLM2-L6-H768"
     threshold: 0.5
   consistency:
     model: "sentence-transformers/all-MiniLM-L6-v2"
