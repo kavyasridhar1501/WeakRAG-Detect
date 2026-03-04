@@ -38,13 +38,12 @@ class EntailmentLF:
     FAITHFUL: int = 0
     ABSTAIN: int = -1
 
-    # DeBERTa-v3 NLI label order: contradiction=0, entailment=1, neutral=2
-    # (order is model-specific; we resolve it at init time)
+    # Label order is model-specific; we resolve it at init time from id2label
     _LABEL_ORDER: dict = {}
 
     def __init__(
         self,
-        model_name: str = "cross-encoder/nli-deberta-v3-small",
+        model_name: str = "cross-encoder/nli-MiniLM2-L6-H768",
         threshold: float = 0.5,
     ):
         """Load the cross-encoder NLI model.
