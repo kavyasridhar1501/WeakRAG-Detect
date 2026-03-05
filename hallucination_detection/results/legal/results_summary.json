@@ -1,0 +1,15 @@
+{
+  "domain": "legal",
+  "results": [
+    {
+      "method": "Source (Legal \u2192 Legal)",
+      "domain": "legal",
+      "precision": "1.0",
+      "recall": "0.9692",
+      "f1": "0.9844",
+      "accuracy": "0.99",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    }
+  ]
+}

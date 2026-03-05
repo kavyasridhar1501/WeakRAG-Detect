@@ -193,22 +193,165 @@ def main():
 
 
 def _make_synthetic_scientific_data(n: int = 400) -> list:
-    """Generate synthetic SciQ-style data for smoke testing."""
+    """Generate synthetic SciQ-style data for smoke testing.
+
+    Uses 8 question templates × 6 subject domains × 3 answer variants to
+    avoid trivial memorisation.  Hallucinated answers introduce physically or
+    chemically incorrect facts.
+    """
     import random
     random.seed(42)
+
+    # (question_template, context_template, faithful_answers, hallucinated_answers)
+    # Placeholders: {subj}, {val}, {unit}, {mechanism}, {product}
     templates = [
-        ("What causes photosynthesis?", "Plants use sunlight, water and CO2 to produce glucose.", "Sunlight, water and CO2.", 0),
-        ("What is the boiling point of water?", "Water boils at 100°C at standard pressure.", "Water boils at 200°C.", 1),
-        ("How does gravity work?", "Gravity attracts objects with mass towards each other.", "Gravity repels objects with mass.", 1),
-        ("What is DNA?", "DNA is a double-helix molecule encoding genetic information.", "DNA encodes genetic information.", 0),
+        (
+            "What is the {subj} of {product}?",
+            "The {subj} of {product} is {val} {unit} under standard conditions.",
+            [
+                "The {subj} of {product} is {val} {unit}.",
+                "{product} has a {subj} of {val} {unit} at standard conditions.",
+                "Under standard conditions, {product}'s {subj} measures {val} {unit}.",
+            ],
+            [
+                "The {subj} of {product} is {val}00 {unit}.",
+                "{product} does not have a measurable {subj}.",
+                "The {subj} of {product} varies wildly and cannot be specified.",
+            ],
+        ),
+        (
+            "How does {mechanism} work in {product}?",
+            "{product} relies on {mechanism} to convert energy into usable forms.",
+            [
+                "{product} uses {mechanism} to convert energy.",
+                "Energy conversion in {product} occurs through {mechanism}.",
+                "{mechanism} is the primary process by which {product} functions.",
+            ],
+            [
+                "{product} functions without any {mechanism}.",
+                "{mechanism} is irrelevant to how {product} operates.",
+                "{product} uses the inverse of {mechanism} for energy conversion.",
+            ],
+        ),
+        (
+            "What is produced when {product} undergoes {mechanism}?",
+            "When {product} undergoes {mechanism}, it produces {val} moles of energy and water.",
+            [
+                "{mechanism} of {product} produces energy and water.",
+                "The products of {mechanism} in {product} are energy and water.",
+                "{product} yields energy and water through {mechanism}.",
+            ],
+            [
+                "{mechanism} of {product} produces pure nitrogen gas.",
+                "Only carbon dioxide is produced when {product} undergoes {mechanism}.",
+                "{product} disintegrates completely during {mechanism} leaving no product.",
+            ],
+        ),
+        (
+            "What is the unit of {subj}?",
+            "The SI unit of {subj} is the {unit}, defined as {val} base units.",
+            [
+                "The SI unit of {subj} is the {unit}.",
+                "{subj} is measured in {unit} (SI standard).",
+                "Scientists measure {subj} using the {unit} as the base unit.",
+            ],
+            [
+                "The unit of {subj} is the kilogram regardless of quantity.",
+                "{subj} has no standardised unit of measurement.",
+                "{subj} is measured in candelas per square metre.",
+            ],
+        ),
+        (
+            "Why does {product} exhibit {mechanism}?",
+            "{product} exhibits {mechanism} because of its molecular structure and {val} bonds.",
+            [
+                "{product} shows {mechanism} due to its molecular structure.",
+                "The {val} bonds in {product} are responsible for {mechanism}.",
+                "{mechanism} arises from the molecular structure of {product}.",
+            ],
+            [
+                "{product} does not exhibit {mechanism} under any conditions.",
+                "{mechanism} in {product} is caused by external magnetic fields.",
+                "{product} exhibits {mechanism} only at absolute zero.",
+            ],
+        ),
+        (
+            "What temperature is required for {mechanism} in {product}?",
+            "{mechanism} in {product} requires a temperature of {val} {unit}.",
+            [
+                "{mechanism} requires {val} {unit} in {product}.",
+                "A temperature of {val} {unit} initiates {mechanism} in {product}.",
+                "{product} undergoes {mechanism} at {val} {unit}.",
+            ],
+            [
+                "{mechanism} in {product} occurs at room temperature spontaneously.",
+                "{product} requires {val}000 {unit} for {mechanism} to start.",
+                "Temperature is irrelevant to {mechanism} in {product}.",
+            ],
+        ),
+        (
+            "How is {subj} measured in {product}?",
+            "{subj} in {product} is measured using {mechanism} with {unit} precision.",
+            [
+                "{mechanism} measures {subj} in {product} with {unit} precision.",
+                "Scientists use {mechanism} to determine {subj} in {product}.",
+                "{subj} of {product} is quantified via {mechanism}.",
+            ],
+            [
+                "{subj} in {product} cannot be measured by any known method.",
+                "Measuring {subj} in {product} requires no specialised equipment.",
+                "{subj} in {product} is inferred from colour alone.",
+            ],
+        ),
+        (
+            "What effect does {mechanism} have on {product}?",
+            "Applying {mechanism} to {product} increases its {subj} by {val} {unit}.",
+            [
+                "{mechanism} increases {product}'s {subj} by {val} {unit}.",
+                "The effect of {mechanism} on {product} is a {val} {unit} rise in {subj}.",
+                "{product} gains {val} {unit} of {subj} through {mechanism}.",
+            ],
+            [
+                "{mechanism} has no measurable effect on {product}.",
+                "{mechanism} destroys {product} instantaneously.",
+                "Applying {mechanism} reduces {product}'s {subj} to zero.",
+            ],
+        ),
     ]
+
+    subjects = ["boiling point", "melting point", "density", "refractive index", "conductivity", "viscosity"]
+    products = ["water", "ethanol", "iron", "sodium chloride", "glucose", "nitrogen gas"]
+    vals = [100, 78, 1000, 1.33, 58, 0.018]
+    units = ["°C", "°C", "kg/m³", "dimensionless", "g/mol", "Pa·s"]
+    mechanisms = ["combustion", "electrolysis", "photosynthesis", "oxidation", "sublimation", "diffusion"]
+
     data = []
-    for i in range(n):
-        q, c, a, lbl = random.choice(templates)
-        data.append({
-            "id": f"scientific_{i}", "question": q, "context": c,
-            "answer": a, "label": lbl, "domain": "scientific", "source": "synthetic",
-        })
+    idx = 0
+    for subj, product, val, unit, mechanism in zip(subjects, products, vals, units, mechanisms):
+        for q_t, c_t, faith_ans, hall_ans in templates:
+            ctx = c_t.format(subj=subj, product=product, val=val, unit=unit, mechanism=mechanism)
+            q = q_t.format(subj=subj, product=product, mechanism=mechanism)
+            for ans_t in faith_ans:
+                ans = ans_t.format(subj=subj, product=product, val=val, unit=unit, mechanism=mechanism)
+                data.append({
+                    "id": f"scientific_{idx}", "question": q, "context": ctx,
+                    "answer": ans, "label": 0, "domain": "scientific", "source": "synthetic",
+                })
+                idx += 1
+            for ans_t in hall_ans:
+                ans = ans_t.format(subj=subj, product=product, val=val, unit=unit, mechanism=mechanism)
+                data.append({
+                    "id": f"scientific_{idx}", "question": q, "context": ctx,
+                    "answer": ans, "label": 1, "domain": "scientific", "source": "synthetic",
+                })
+                idx += 1
+
+    random.shuffle(data)
+    while len(data) < n:
+        data.extend(data[: n - len(data)])
+    data = data[:n]
+    for i, ex in enumerate(data):
+        ex["id"] = f"scientific_{i}"
     return data
 
 

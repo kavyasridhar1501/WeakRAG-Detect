@@ -1,0 +1,65 @@
+{
+  "domain": "medical",
+  "results": [
+    {
+      "method": "Seeds Only (n=30)",
+      "domain": "medical",
+      "precision": "0.4641",
+      "recall": "0.8161",
+      "f1": "0.5917",
+      "accuracy": "0.51",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Seeds + Snorkel",
+      "domain": "medical",
+      "precision": "0.4407",
+      "recall": "0.5977",
+      "f1": "0.5073",
+      "accuracy": "0.495",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Self-Training",
+      "domain": "medical",
+      "precision": "0.4407",
+      "recall": "0.5977",
+      "f1": "0.5073",
+      "accuracy": "0.495",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Co-Training",
+      "domain": "medical",
+      "precision": "0.4237",
+      "recall": "0.8621",
+      "f1": "0.5682",
+      "accuracy": "0.43",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Legal\u2192Medical (zero-shot)",
+      "domain": "medical",
+      "precision": "0.3556",
+      "recall": "0.1839",
+      "f1": "0.2424",
+      "accuracy": "0.5",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Legal\u2192Medical (few-shot n=30)",
+      "domain": "medical",
+      "precision": "0.4396",
+      "recall": "0.9195",
+      "f1": "0.5948",
+      "accuracy": "0.455",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    }
+  ]
+}
