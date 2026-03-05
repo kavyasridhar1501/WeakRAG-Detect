@@ -1,0 +1,272 @@
+[
+  {
+    "id": "scientific_185",
+    "question": "What percentage of men suffer from some form of erectile dysfunction by age 40?",
+    "context": "Male Reproductive System Erectile dysfunction (ED) is a condition in which a man has difficulty either initiating or maintaining an erection. The combined prevalence of minimal, moderate, and complete ED is approximately 40 percent in men at age 40, and reaches nearly 70 percent by 70 years of age. In addition to aging, ED is associated with diabetes, vascular disease, psychiatric disorders, prostate disorders, the use of some drugs such as certain antidepressants, and problems with the testes resulting in low testosterone concentrations. These physical and emotional conditions can lead to interruptions in the vasodilation pathway and result in an inability to achieve an erection. Recall that the release of NO induces relaxation of the smooth muscles that surround the penile arteries, leading to the vasodilation necessary to achieve an erection. To reverse the process of vasodilation, an enzyme called phosphodiesterase (PDE) degrades a key component of the NO signaling pathway called cGMP. There are several different forms of this enzyme, and PDE type 5 is the type of PDE found in the tissues of the penis. Scientists discovered that inhibiting PDE5 increases blood flow, and allows vasodilation of the penis to occur. PDEs and the vasodilation signaling pathway are found in the vasculature in other parts of the body. In the 1990s, clinical trials of a PDE5 inhibitor called sildenafil were initiated to treat hypertension and angina pectoris (chest pain caused by poor blood flow through the heart). The trial showed that the drug was not effective at treating heart conditions, but many men experienced erection and priapism (erection lasting longer than 4 hours). Because of this, a clinical trial was started to investigate the ability of sildenafil to promote erections in men suffering from ED. In 1998, the FDA approved the drug, marketed as Viagra\u00ae. Since approval of the drug, sildenafil and similar PDE inhibitors now generate over a billion dollars a year in sales, and are reported to be effective in treating approximately 70 to 85 percent of cases of ED. Importantly, men with health problems\u2014especially those with cardiac disease taking nitrates\u2014should avoid Viagra or talk to their physician to find out if they are a candidate for the use of this drug, as deaths have been reported for at-risk users.",
+    "answer": "approximately 60 percent",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_6696",
+    "question": "While matter is recycled, ecosystems need a constant input of what?",
+    "context": "In all biomes, ecosystems need a constant input of energy. Matter, on the other hand, is constantly recycled in ecosystems.",
+    "answer": "energy",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_13623",
+    "question": "What type of bonds only form in metals?",
+    "context": "Special bonds form in metals that do not form in other classes of elements. They are called metallic bonds. The bonds explain some of the unique properties of elements in the metals class.",
+    "answer": "optical bonds",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_7484",
+    "question": "What is used for cooling detectors of infrared telescopes?",
+    "context": "Detecting Electromagnetic Waves from Space A final note on star gazing. The entire electromagnetic spectrum is used by researchers for investigating stars, space, and time. As noted earlier, Penzias and Wilson detected microwaves to identify the background radiation originating from the Big Bang. Radio telescopes such as the Arecibo Radio Telescope in Puerto Rico and Parkes Observatory in Australia were designed to detect radio waves. Infrared telescopes need to have their detectors cooled by liquid nitrogen to be able to gather useful signals. Since infrared radiation is predominantly from thermal agitation, if the detectors were not cooled, the vibrations of the molecules in the antenna would be stronger than the signal being collected. The most famous of these infrared sensitive telescopes is the James Clerk Maxwell Telescope in Hawaii. The earliest telescopes, developed in the seventeenth century, were optical telescopes, collecting visible light. Telescopes in the ultraviolet, X-ray, and \u03b3 -ray regions are placed outside the atmosphere on satellites orbiting the Earth. The Hubble Space Telescope (launched in 1990) gathers ultraviolet radiation as well as visible light. In the X-ray region, there is the Chandra X-ray Observatory (launched in 1999), and in the \u03b3 -ray region, there is the new Fermi Gamma-ray Space Telescope (launched in 2008\u2014taking the place of the Compton Gamma Ray Observatory, 1991\u20132000. PhET Explorations: Color Vision Make a whole rainbow by mixing red, green, and blue light. Change the wavelength of a monochromatic beam or filter white light. View the light as a solid beam, or see the individual photons.",
+    "answer": "liquid nitrogen",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_23722",
+    "question": "Cellular respiration that proceeds in the absence of oxygen is called what?",
+    "context": "Cellular respiration that proceeds in the absence of oxygen is anaerobic respiration.",
+    "answer": "anaerobic respiration",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_18524",
+    "question": "Evolution happens because of what?",
+    "context": "Evolution happens because of natural selection . Good traits become more common in a population. Bad traits become less common. The deer mouse, species Peromyscus maniculatus gives an example of evolution by natural selection. In Nebraska, this mouse is typically brown. But in places where glaciers dropped lighter sand over the darker soil, the mice are light. Why? Because predators could more easily spot the dark mice on light sand. The lighter mice were more likely to survive and have offspring. Natural selection favored the light mice. Over time, the population became light colored. Enough changes may take place over time that the two types of mice become different species.",
+    "answer": "natural selection",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_18518",
+    "question": "What is the clear, curved structure that works with the cornea to help focus light at the back of the eye?",
+    "context": "After passing into the eye through the pupil, light passes through the lens. The lens of the eye is a clear, curved structure. Along with the cornea, the lens helps focus light at the back of the eye. This is pictured below ( Figure below ).",
+    "answer": "lens",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_23216",
+    "question": "What types of glands do only female mammals have?",
+    "context": "Two traits are used to define the mammal class. They are fur or hair and mammary glands in females.",
+    "answer": "mammary",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_25428",
+    "question": "In what type of animals may a body cavity be present or absent?",
+    "context": "",
+    "answer": "triploblastic",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_1273",
+    "question": "Every chemical reaction occurs with a concurrent change in what?",
+    "context": "Every chemical reaction occurs with a concurrent change in energy.",
+    "answer": "neutrons",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_169",
+    "question": "Nutrition and diet affect your metabolism. more energy is required to break down fats and proteins than this?",
+    "context": "24.7 Nutrition and Diet Nutrition and diet affect your metabolism. More energy is required to break down fats and proteins than carbohydrates; however, all excess calories that are ingested will be stored as fat in the body. On average, a person requires 1500 to 2000 calories for normal daily activity, although routine exercise will increase that amount. If you ingest more than that, the remainder is stored for later use. Conversely, if you ingest less than that, the energy stores in your body will be depleted. Both the quantity and quality of the food you eat affect your metabolism and can affect your overall health. Eating too much or too little can result in serious medical conditions, including cardiovascular disease, cancer, and diabetes. Vitamins and minerals are essential parts of the diet. They are needed for the proper function of metabolic pathways in the body. Vitamins are not stored in the body, so they must be obtained from the diet or synthesized from precursors available in the diet. Minerals are also obtained from the diet, but they are also stored, primarily in skeletal tissues.",
+    "answer": "vitamins",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_5928",
+    "question": "What is the term for behaviors that are closely controlled by genes with little or no environmental influence?",
+    "context": "Behaviors that are closely controlled by genes with little or no environmental influence are called innate behaviors . These are behaviors that occur naturally in all members of a species whenever they are exposed to a certain stimulus. Innate behaviors do not have to be learned or practiced. They are also called instinctive behaviors. An instinct is the ability of an animal to perform a behavior the first time it is exposed to the proper stimulus. For example, a dog will drool the first time\u2014and every time\u2014it is exposed to food.",
+    "answer": "innate behaviors",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_2526",
+    "question": "What type of vertebrates control body temperature to just a limited extent from the outside by changing behavior?",
+    "context": "Early vertebrates were ectothermic. Ectothermy means controlling body temperature to just a limited extent from the outside by changing behavior. For example, an ectotherm might stay in the shade to keep cool on a hot, sunny day. On a cold day, an ectotherm might bask in the sun to warm up, like the snake in Figure below . Almost all living fish, amphibians, and reptiles are ectothermic. They can raise or lower their body temperature by their behavior but not by very much. In cold weather, an ectotherm cools down. As its body temperature drops, its metabolism slows down and it becomes inactive.",
+    "answer": "ectothermic",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_15988",
+    "question": "What determines which type of precipitation falls in the atmosphere?",
+    "context": "Why does it snow instead of rain? Air temperature determines which type of precipitation falls. Rain falls if the air temperature is above freezing (0\u00b0 C or 32\u00b0 F). Frozen precipitation falls if the air or ground is below freezing. Frozen precipitation may fall as snow , sleet , or freezing rain . Below, you can see how the different types form ( Figure below ).",
+    "answer": "air temperature",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_18677",
+    "question": "Lactose is a disaccharide consisting of the monomers glucose and what?",
+    "context": "Common disaccharides include lactose, maltose, and sucrose (Figure 3.8). Lactose is a disaccharide consisting of the monomers glucose and galactose. It is found naturally in milk. Maltose, or malt sugar, is a disaccharide formed by a dehydration reaction between two glucose molecules. The most common disaccharide is sucrose, or table sugar, which is composed of the monomers glucose and fructose.",
+    "answer": "fructose",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_7011",
+    "question": "What type of transport requires no energy and occurs when substances move from areas of higher to lower concentration?",
+    "context": "Passive transport requires no energy. It occurs when substances move from areas of higher to lower concentration. Types of passive transport include simple diffusion, osmosis, and facilitated diffusion.",
+    "answer": "immune transport",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_24670",
+    "question": "Where are ribosomes made?",
+    "context": "The nucleolus is inside the nucleus, and is where ribosomes are made.",
+    "answer": "the nucleolus",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_26291",
+    "question": "What is a vector quantity with the same direction as the force called?",
+    "context": "Impulse is a vector quantity that has the same direction as the force.",
+    "answer": "accelerated",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_1605",
+    "question": "What change the physical properties of solvents?",
+    "context": "Solutes change the physical properties of solvents. They lower the freezing point and raise the boiling point of solvents.",
+    "answer": "molecules",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_8140",
+    "question": "An axe head and a doorstop are types of what simple machine?",
+    "context": "The axe head and the doorstop are both examples of a wedge, a type of simple machine.",
+    "answer": "wedge",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_10899",
+    "question": "After fertilization, how many cells does a zygote form into?",
+    "context": "After fertilization, the zygote divides to form two cells: the upper cell, or terminal cell, and the lower, or basal, cell. The division of the basal cell gives rise to the suspensor, which eventually makes connection with the maternal tissue. The suspensor provides a route for nutrition to be transported from the mother plant to the growing embryo. The terminal cell also divides, giving rise to a globular-shaped proembryo (Figure 32.19a). In dicots (eudicots), the developing embryo has a heart shape, due to the presence of the two rudimentary cotyledons (Figure 32.19b). In non-endospermic dicots, such as Capsella bursa, the endosperm develops initially, but is then digested, and the food reserves are moved into the two cotyledons. As the embryo and cotyledons enlarge, they run out of room inside the developing seed, and are forced to bend (Figure 32.19c). Ultimately, the embryo and cotyledons fill the seed (Figure 32.19d), and the seed is ready for dispersal. Embryonic development is suspended after some time, and growth is resumed only when the seed germinates. The developing seedling will rely on the food reserves stored in the cotyledons until the first set of leaves begin photosynthesis.",
+    "answer": "three",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_12716",
+    "question": "What part of the brain regulates certain hormones associated with reproduction during breeding seasons?",
+    "context": "",
+    "answer": "hypothalamus",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_27040",
+    "question": "What is the process by which plants make the simple sugar glucose from carbon dioxide and water is called?",
+    "context": "One of the most important series of endothermic reactions is photosynthesis. In photosynthesis, plants make the simple sugar glucose (C 6 H 12 O 6 ) from carbon dioxide (CO 2 ) and water (H 2 O). They also release oxygen (O 2 ) in the process. The reactions of photosynthesis are summed up by this chemical equation:.",
+    "answer": "photosynthesis",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_26909",
+    "question": "What do methanogens act as in sewage treatment plants?",
+    "context": "",
+    "answer": "creators",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_3301",
+    "question": "There is a positive correlation between the ability to conduct thermal energy and what other energy, as exemplified by metals?",
+    "context": "Your feet feel cold as you walk barefoot across the living room carpet in your cold house and then step onto the kitchen tile floor. This result is intriguing, since the carpet and tile floor are both at the same temperature. The different sensation you feel is explained by the different rates of heat transfer: the heat loss during the same time interval is greater for skin in contact with the tiles than with the carpet, so the temperature drop is greater on the tiles. Some materials conduct thermal energy faster than others. In general, good conductors of electricity (metals like copper, aluminum, gold, and silver) are also good heat conductors, whereas insulators of electricity (wood, plastic, and rubber) are poor.",
+    "answer": "nuclear",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_17307",
+    "question": "Androgen secretion and sperm production are both controlled by hypothalamic and which other hormones?",
+    "context": "",
+    "answer": "Testes",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_3026",
+    "question": "What is the colorless gas with a sharp, pungent odor used in smelling salts?",
+    "context": "Ammonia is a colorless gas with a sharp, pungent odor. Smelling salts utilize this powerful odor. Gaseous ammonia readily liquefies to give a colorless liquid that boils at \u221233 \u00b0C. Due to intermolecular hydrogen bonding, the enthalpy of vaporization of liquid ammonia is higher than that of any other liquid except water, so ammonia is useful as a refrigerant. Ammonia is quite soluble in water (658 L at STP dissolves in 1 L H2O). The chemical properties of ammonia are as follows: 1. Ammonia acts as a Br\u00f8nsted base, as discussed in the chapter on acid-base chemistry. The ammonium ion is.",
+    "answer": "ammonia",
+    "label": 0,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_1637",
+    "question": "What does every star emit that humans cannot see?",
+    "context": "Visible light is only a small part of the electromagnetic spectrum. There are parts of the electromagnetic spectrum that humans cannot see. This radiation exists all around you. You just can\u2019t see it! Every star, including our Sun, emits radiation of many wavelengths. Astronomers can learn a lot from studying the details of the spectrum of radiation from a star.",
+    "answer": "sound",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_18869",
+    "question": "What would you call a relationship where the bacteria benefit and and the other organism is harmed?",
+    "context": "Other bacteria are parasitic and can cause illness. In parasitism , the bacteria benefit, and the other organism is harmed. Harmful bacteria will be discussed in another concept.",
+    "answer": "pathology",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  },
+  {
+    "id": "scientific_26533",
+    "question": "What is considered a good source of calcium?",
+    "context": "Milk is naturally a good source of calcium. Vitamin D is also often added to milk. Both these nutrients help build strong bones.",
+    "answer": "wheat",
+    "label": 1,
+    "domain": "scientific",
+    "source": "SciQ"
+  }
+]

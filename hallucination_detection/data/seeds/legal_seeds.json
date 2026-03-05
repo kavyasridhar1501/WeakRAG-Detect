@@ -1,0 +1,272 @@
+[
+  {
+    "id": "legal_435",
+    "question": "How many days does the buyer have to pay?",
+    "context": "Payment of $5000 is due within 30 days of invoice.",
+    "answer": "The buyer has 90 days to pay.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_218",
+    "question": "What is the total payment amount?",
+    "context": "The Buyer agrees to pay a total of $5000 to the Seller.",
+    "answer": "$5000 shall be paid.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_321",
+    "question": "When does the contract terminate?",
+    "context": "The term of this contract shall end on Dec 31, 2025.",
+    "answer": "The contract terminates on Jun 15, 2024.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_30",
+    "question": "What is the notice period for termination?",
+    "context": "Either party may terminate this agreement upon 30 days written notice.",
+    "answer": "The notice period is 90 days.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_409",
+    "question": "When does the contract terminate?",
+    "context": "The term of this contract shall end on Dec 31, 2025.",
+    "answer": "It ends on Dec 31, 2025.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_118",
+    "question": "What is the notice period for termination?",
+    "context": "Either party may terminate this agreement upon 30 days written notice.",
+    "answer": "Termination requires 30 days notice.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_167",
+    "question": "What is the confidentiality obligation?",
+    "context": "Solaris Ltd agrees to keep all information received from Meridian Group strictly confidential.",
+    "answer": "Solaris Ltd shall not disclose Meridian Group's information.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_359",
+    "question": "What is the confidentiality obligation?",
+    "context": "Solaris Ltd agrees to keep all information received from Meridian Group strictly confidential.",
+    "answer": "Solaris Ltd shall not disclose Meridian Group's information.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_134",
+    "question": "What is the notice period for termination?",
+    "context": "Either party may terminate this agreement upon 30 days written notice.",
+    "answer": "A 30-day notice is required.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_357",
+    "question": "What is the governing law of this agreement?",
+    "context": "This agreement shall be governed by the laws of the State of Delaware.",
+    "answer": "The governing law is Washington.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_48",
+    "question": "Who are the parties to this agreement?",
+    "context": "This agreement is entered into by and between Acme Corp and Beta Ltd.",
+    "answer": "Nexus Corp and Prime Holdings.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_10",
+    "question": "What is the total payment amount?",
+    "context": "The Buyer agrees to pay a total of $5000 to the Seller.",
+    "answer": "A total of $5000 is due.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_310",
+    "question": "What is the notice period for termination?",
+    "context": "Either party may terminate this agreement upon 30 days written notice.",
+    "answer": "Termination requires 30 days notice.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_356",
+    "question": "Which party is responsible for delivering the goods?",
+    "context": "Alpha Co shall be solely responsible for delivering all goods to Omega Ltd.",
+    "answer": "Alpha Co must deliver the goods.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_225",
+    "question": "When does the contract terminate?",
+    "context": "The term of this contract shall end on Dec 31, 2025.",
+    "answer": "The contract terminates on Mar 1, 2023.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_15",
+    "question": "What is the confidentiality obligation?",
+    "context": "Nexus Corp agrees to keep all information received from Prime Holdings strictly confidential.",
+    "answer": "Nexus Corp must keep Prime Holdings's information confidential.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_424",
+    "question": "Who are the parties to this agreement?",
+    "context": "This agreement is entered into by and between Vertex Inc and Apex Partners.",
+    "answer": "The parties are Vertex Inc and Apex Partners.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_243",
+    "question": "How many days does the buyer have to pay?",
+    "context": "Payment of $5000 is due within 30 days of invoice.",
+    "answer": "The buyer has 120 days to pay.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_165",
+    "question": "What is the governing law of this agreement?",
+    "context": "This agreement shall be governed by the laws of the State of California.",
+    "answer": "The governing law is Nevada.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_83",
+    "question": "How many days does the buyer have to pay?",
+    "context": "Payment of $5000 is due within 30 days of invoice.",
+    "answer": "30 days after invoice.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_189",
+    "question": "What is the governing law of this agreement?",
+    "context": "This agreement shall be governed by the laws of the State of Illinois.",
+    "answer": "The governing law is Georgia.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_126",
+    "question": "What is the notice period for termination?",
+    "context": "Either party may terminate this agreement upon 30 days written notice.",
+    "answer": "The notice period is 7 days.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_478",
+    "question": "What is the notice period for termination?",
+    "context": "Either party may terminate this agreement upon 30 days written notice.",
+    "answer": "Termination requires 30 days notice.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_375",
+    "question": "What is the confidentiality obligation?",
+    "context": "Nexus Corp agrees to keep all information received from Prime Holdings strictly confidential.",
+    "answer": "Nexus Corp must keep Prime Holdings's information confidential.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_13",
+    "question": "What is the governing law of this agreement?",
+    "context": "This agreement shall be governed by the laws of the State of Texas.",
+    "answer": "This contract is governed by Texas law.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_183",
+    "question": "What is the confidentiality obligation?",
+    "context": "Nexus Corp agrees to keep all information received from Prime Holdings strictly confidential.",
+    "answer": "Delta Inc must keep Gamma LLC's information confidential.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_490",
+    "question": "What is the total payment amount?",
+    "context": "The Buyer agrees to pay a total of $5000 to the Seller.",
+    "answer": "A total of $5000 is due.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_147",
+    "question": "How many days does the buyer have to pay?",
+    "context": "Payment of $5000 is due within 30 days of invoice.",
+    "answer": "The buyer has 45 days to pay.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_365",
+    "question": "What is the governing law of this agreement?",
+    "context": "This agreement shall be governed by the laws of the State of California.",
+    "answer": "California law applies.",
+    "label": 0,
+    "domain": "legal",
+    "source": "synthetic"
+  },
+  {
+    "id": "legal_27",
+    "question": "How many days does the buyer have to pay?",
+    "context": "Payment of $5000 is due within 30 days of invoice.",
+    "answer": "The buyer has 45 days to pay.",
+    "label": 1,
+    "domain": "legal",
+    "source": "synthetic"
+  }
+]

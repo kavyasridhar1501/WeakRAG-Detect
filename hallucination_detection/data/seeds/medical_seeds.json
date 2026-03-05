@@ -1,0 +1,272 @@
+[
+  {
+    "id": "medical_742",
+    "question": "MR arthrography of the shoulder: do we need local anesthesia?",
+    "context": "To assess pain intensity with and without subcutaneous local anesthesia prior to intraarticular administration of contrast medium for magnetic resonance arthrography (MRa) of the shoulder. This single-center study was conducted after an IRB waiver of authorization, between January 2010 and December 2012. All patients provided written, informed consent for the procedure. Our prospectively populated institutional database was searched, based on our inclusion criteria. There were 249 outpatients (178 men and 71 women; mean age, 44.4 years \u00b1 14.6; range, 15-79) who underwent MRa and were enrolled in this study. Patients were excluded if they had received surgery of the shoulder before MRa, had undergone repeated MRa of the same shoulder, and/or had undergone MRa of both shoulders on the same day. Patients were randomly assigned into one of three groups. Patients in group A (n=61) received skin infiltration with local anesthesia. Patients in control group B (n=92) and group C (n=96) did not receive local anesthesia. Pain levels were immediately assessed after the injection for MRa using a horizontal visual analog scale (VAS) that ranged from 0 to 10. To compare the pain scores of the three groups for male and female patients, a two-way analysis of variance was used. A p-value equal to or less than 0.05 was considered to indicate a significant result. Patients who received local anesthesia (group A) showed a mean pain level on the VAS of 2.6 \u00b1 2.3. In patients who did not receive local anesthetics (groups B and C), a mean pain level on the VAS of 2.6 \u00b1 2.2 and 2.7 \u00b1 2.4 were detected, respectively. Between the three groups, no statistically significant difference in pain intensity was detected (p=.960). There were significant differences in subjective pain perception between men and women (p=.009). Moreover, the sex difference in all three groups was equal (p=.934).",
+    "answer": "Local anesthesia is not required to lower a patient's pain intensity when applying intra-articular contrast media for MR arthrography of the shoulder. This could result in reduced costs and a reduced risk of adverse reactions, without an impact on patient comfort.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_469",
+    "question": "Is it safe to perform rectal anastomosis in gynaecological debulking surgery without a diverting stoma?",
+    "context": "Patient data were retrospectively collected from a database for gynaecological cancer procedures carried out between January 2013 and July 2015. All patients who underwent a colorectal resection during cytoreduction were included in the study. The primary outcome was anastomotic leakage in the presence or absence of a diverting stoma. Secondary outcome parameters were complications and reoperations. In the period of study, 43 major colorectal procedures were performed on 37 women. The most common colorectal procedure was low rectal resection (n\u00a0=\u00a022; 59%) followed by anterior rectal resection (n\u00a0=\u00a07; 19%) and sigmoid resection (n\u00a0=\u00a04; 11%). Five (14%) patients underwent Hartmann's procedure. In three (8%) patients, a diverting loop ileostomy was created.",
+    "answer": "Low rectal resection during debulking procedures for gynaecological cancers with peritoneal carcinomatosis can safely be performed by an experienced surgeon without a diverting stoma.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_239",
+    "question": "Spinal subdural hematoma: a sequela of a ruptured intracranial aneurysm?",
+    "context": "A case of spinal subdural hematoma (SSDH) following subarachnoid hemorrhage (SAH) because of a ruptured internal carotid aneurysm is described. Such a case has never been reported. A 52-year-old woman underwent a craniotomy for a ruptured internal carotid aneurysm. A computed tomography scan showed that SAH existed predominantly in the posterior fossa and subdural hematoma beneath the cerebellar tentorium. Intrathecal administration of urokinase, IV administration of fasudil hydrochloride, and continuous cerebrospinal fluid (CSF) evacuation via cisternal drainage were performed as prophylactic treatments for vasospasm. On the sixth postoperative day, the patient complained of severe lower back and buttock pain. Magnetic resonance imaging showed a subdural hematoma in the lumbosacral region. Although the mass effect was extensive, the patient showed no neurologic symptoms other than the sciatica. She was treated conservatively. The hematoma dissolved gradually and had diminished completely 15 weeks later. Her pain gradually subsided, and she was discharged 7 weeks later without any neurologic deficit.",
+    "answer": "Although the exact mechanism of SSDH in this case is unclear, we speculate that this SSDH was a hematoma that migrated from the intracranial subdural space. Low CSF pressure because of continuous drainage and intrathecal thrombolytic therapy may have played an important role in the migration of the hematoma through the spinal canal. It is important to recognize the SSDH as a possible complication of the SAH accompanied with intracranial subdural hematoma.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_994",
+    "question": "Does desflurane alter left ventricular function when used to control surgical stimulation during aortic surgery?",
+    "context": "Although desflurane is commonly used to control surgically induced hypertension, its effects on left ventricular (LV) function have not been investigated in this clinical situation. The purpose of the present study was to evaluate the LV function response to desflurane, when used to control intraoperative hypertension. In 50 patients, scheduled for vascular surgery, anesthesia was induced with sufentanil 0.5 microg/kg, midazolam 0.3 mg/kg and atracurium 0.5 mg/kg. After tracheal intubation, anesthesia was maintained with increments of drugs with controlled ventilation (N2O/O2=60/40%) until the start of surgery. A 5 Mhz transesophageal echocardiography (TEE) probe was inserted after intubation. Pulmonary artery catheter and TEE measurements were obtained after induction (to)(control value), at surgical incision (t1) if it was associated with an increase in systolic arterial pressure (SAP) greater than 140 mmHg (hypertension) and after control of hemodynamic parameters by administration of desflurane (return of systolic arterial pressure to within 20% of the control value) (t2) in a fresh gas flow of 31/ min. Sixteen patients developed hypertension at surgical incision. SAP was controlled by desflurane in all 16 patients. Afterload assessed by systemic vascular resistance index (SVRI), end-systolic wall-stress (ESWS) and left-ventricular stroke work index (LVSWI) increased with incision until the hypertension returned to post-induction values with mean end-tidal concentration of 5.1+/-0.7% desflurane. No change in heart rate, cardiac index, mean pulmonary arterial pressure, stroke volume, end-diastolic and end-systolic cross-sectional areas, fractional area change and left ventricular circumferential fiber shortening was noted when desflurane was added to restore blood pressure.",
+    "answer": "This study demonstrates that in patients at risk for cardiac morbidity undergoing vascular surgery, desflurane is effective to control intraoperative hypertension without fear of major cardiac depressant effect.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_171",
+    "question": "Convulsions and retinal haemorrhage: should we look further?",
+    "context": "The prevalence of retinal haemorrhages after convulsions is not well established. As these haemorrhages are considered characteristic of child abuse, we investigated their occurrence after convulsive episodes to see whether the finding of haemorrhage should prompt further investigation. Prospective study of 153 children (aged 2 months to 2 years), seen in the emergency department after a convulsive episode. After a thorough history and physical examination, a retinal examination was performed by an ophthalmologist. If findings were positive, further investigation was undertaken to rule out systemic disorder or child abuse. One child was found with unilateral retinal haemorrhages following an episode of a simple febrile convulsion. A thorough investigation uncovered no other reason for this finding.",
+    "answer": "Retinal haemorrhages following a convulsive episode are rare. Such a finding should trigger an extensive search for other reasons, including child abuse.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_494",
+    "question": "Does topical N-acetylcysteine application after myringotomy cause severe otorrhea?",
+    "context": "The effect of topical N-acetylcysteine (NAC) application was investigated on the healing of acute experimental tympanic membrane perforations. Twenty guinea pigs were used in this study. Under intraperitoneal ketamine anesthesia, incisional myringotomies were performed in the posterosuperior quadrant of the tympanic membranes with a straight otologic hook. The diameter of the perforations was approximately 2 mm. Perforations in both ears were treated with freshly prepared sponges soaked in either 0.1 ml 0.9% NaCl solution (10 control animals) or 0.6 mg/0.1 ml NAC (10 animals) for three consecutive days. All the tympanic membranes were examined by otomicroscopy on the third, fifth, seventh, and ninth days. In the control group, all the perforations were completely closed at the end of nine days. During the same period, only 40% of the perforations were completely closed in the NAC group. The remaining ears exhibited otorrhea by the third day.",
+    "answer": "N-acetylcysteine may cause severe otorrhea in the healing process of tympanic membrane perforations. Further studies including histopathological examinations are required to elucidate this condition.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_600",
+    "question": "Does \u03b2-catenin have a role in pathogenesis of sebaceous cell carcinoma of the eyelid?",
+    "context": "48 cases of SbCC were analysed immunohistochemically using monoclonal \u03b2-catenin antibody and the results correlated with tumour size, histopathological differentiation, orbital invasion and pagetoid spread. Cytoplasmic overexpression of \u03b2-catenin was seen in 66% cases of SbCC which correlated positively with tumour size, orbital invasion and pagetoid spread. This correlation was found to be significant in tumour size>2 cm (p = 0.242). Nuclear staining was not observed in any of the cases.",
+    "answer": "Cytoplasmic overexpression of \u03b2-catenin was observed in the majority of the cases of SbCC of eyelid, and this correlated significantly with tumour size. The authors therefore hypothesise that \u03b2-catenin overexpression in SbCC of eyelid may be a result of Wnt/\u03b2-catenin pathway dysregulation. However, its role both in the development of sebaceous cell carcinoma of the eyelid as well as its prognosis needs to be explored further.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_126",
+    "question": "Does shaving the incision site increase the infection rate after spinal surgery?",
+    "context": "A prospective randomized clinical study. To determine whether shaving the incision site before spinal surgery causes postsurgical infection. Spine surgeons usually shave the skin of the incision site immediately before surgery is performed. However, evidence from some surgical series suggests that presurgical shaving may increase the postsurgical infection rate. To our knowledge, no previously published studies have addressed this issue. A total of 789 patients scheduled to undergo spinal surgery were randomly allocated into 2 groups: those in whom the site of operation was shaved immediately before surgery (shaved group; 371 patients) and the patients in whom presurgical shaving was not performed (unshaved group; 418 patients). The mean duration of anesthesia and the infection rates in both groups were recorded and compared. The duration of anesthesia did not differ in the 2 groups (P>0.05). A postoperative infection developed in 4 patients in the shaved group and in 1 patient in the nonshaved group (P<0.01).",
+    "answer": "The shaving of the incision site immediately before spinal surgery may increase the rate of postoperative infection.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_674",
+    "question": "Is the fibronectin-aggrecan complex present in cervical disk disease?",
+    "context": "To investigate the presence of inflammatory cytokines and the fibronectin-aggrecan complex (FAC) in persons undergoing surgical treatment for cervical radiculopathy caused by disk herniation. Single-center, prospective, consecutive case series. A single large academic institution. A total of 11 patients with radiculopathic pain and magnetic resonance imaging findings positive for disk herniation elected to undergo single-level cervical diskectomy. Lavage was performed by needle injection and aspiration upon entering the disk space for fluoroscopic localization before diskectomy. The lavage fluid was assayed for pH and the FAC, as well as for the cytokines interleukin-6 (IL-6), interferon-\u03b3, monocyte chemotactic protein (MCP), and macrophage inhibitory protein-1\u03b2. The subjects were 7 women and 4 men with a mean age of 50.6 years (SE 9.7; range, 36-70 years). The mean concentrations (SE; range) in picograms per milliliter were 7.9 (4.4; 0-44) for IL-6, 25.3 (15.5; 0-159) for interferon-\u03b3, 16.1 (11.9; 0-121) for MCP, and 6.1 (2.8; 0-29) for macrophage inhibitory protein-1\u03b2. The optical density of the FAC at 450 nm was 0.151 (0.036; 0.1-0.32), and the pH was 6.68 (0.1; 6.10-7.15). Statistically significant correlations were found between MCP and FAC (P = .036) and between FAC and pH (P = .008).",
+    "answer": "Biochemical analysis of injured cervical intervertebral disks reveals the presence of inflammatory markers such as MCP, fragments of structural matrix proteins such as FAC, and a correlation with pH. Further evaluation of the FAC as a potential diagnostic biomarker or therapeutic target is warranted in the cervical spine.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_866",
+    "question": "Can gingival crevicular blood be relied upon for assessment of blood glucose level?",
+    "context": "Diabetes mellitus (DM) is undiagnosed in approximately half of the patients actually suffering from the disease. In addition, the prevalence of DM is more than twice as high as in patients with periodontitis when compared to periodontally healthy subjects. Thus, a high number of patients with periodontitis may have undiagnosed DM. The purpose of the present study was to evaluate whether blood oozing from a gingival crevice during routine periodontal examination can be used for determining glucose levels. Observational cross-sectional studies were carried out in 75 patients (43 males and 32 females) with chronic periodontitis who were divided into two groups: Group I and Group II, respectively. Blood oozing from the gingival crevices of anterior teeth following periodontal probing was collected with the stick of glucose self-monitoring device, and the blood glucose levels were measured. At the same time, finger-prick blood was taken for glucometric analysis and subsequent readings were recorded. The patient's blood glucose values ranged from 74 to 256 mg/dl. The comparison between gingival crevicular blood and finger-prick blood showed a very strong correlation, with a t value of 3.97 (at P value = 0.001).",
+    "answer": "The data from this study has shown that GCB collected during diagnostic periodontal examination can be an excellent source of blood for glucometric analysis.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_642",
+    "question": "Is Aspiration Thrombectomy Beneficial in Patients Undergoing Primary Percutaneous Coronary Intervention?",
+    "context": "It is unclear whether intravenous glycoprotein IIb/IIIa inhibitors or ischemic time might modify any clinical benefits observed with aspiration thrombectomy before primary percutaneous coronary intervention (PCI) in patients with ST-segment-elevation myocardial infarction. Electronic databases were searched for trials that randomized ST-segment-elevation myocardial infarction patients to aspiration thrombectomy before PCI versus conventional PCI. Summary estimates were constructed using a DerSimonian-Laird model. Seventeen trials with 20\u2009960 patients were available for analysis. When compared with conventional PCI, aspiration thrombectomy was not associated with a significant reduction in the risk of mortality 2.8% versus 3.2% (risk ratio [RR], 0.89; 95% confidence interval [CI], 0.76-1.04; P=0.13), reinfarction 1.3% versus 1.4% (RR, 0.93; 95% CI, 0.73-1.17; P=0.52), the combined outcome of mortality or reinfarction 4.1% versus 4.6% (RR, 0.90; 95% CI, 0.79-1.02; P=0.11), or stent thrombosis 0.9% versus 1.2% (RR, 0.82; 95% CI, 0.62-1.08; P=0.15). Aspiration thrombectomy was associated with a nonsignificant increase in the risk of stroke 0.6% versus 0.4% (RR, 1.45; 95% CI, 0.96-2.21; P=0.08). Meta-regression analysis did not identify a difference for the log RR of mortality, reinfarction, and the combined outcome of mortality or reinfarction with intravenous glycoprotein IIb/IIIa inhibitors (P=0.17, 0.70, and 0.50, respectively) or with ischemic time (P=0.29, 0.66, and 0.58, respectively).",
+    "answer": "Aspiration thrombectomy before primary PCI is not associated with any benefit on clinical end points and might increase the risk of stroke. Concomitant administration of intravenous glycoprotein IIb/IIIa inhibitors and ischemic time did not seem to influence any potential benefits observed with aspiration thrombectomy.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_254",
+    "question": "Does the Child Health Computing System adequately identify children with cerebral palsy?",
+    "context": "This paper assesses the usefulness of the Child Health Computing System as a source of information about children with cerebral palsy. A comparative survey of information held on the Child Health Computing System (CHCS) and the Northern Ireland Cerebral Palsy Register (NICPR) in one Health and Social Services Board in Northern Ireland was carried out. The sample comprised children with cerebral palsy aged 5-9 years. Of the 135 cases recorded on the NICPR, 47 per cent were not found on the CHCS; the majority of these children had no computer record of any medical diagnosis. Of the 82 cases recorded on the CHCS, 10 (12 per cent) were not found on the NICPR; five of these cases (6 per cent) were found on follow-up not to have CP.",
+    "answer": "Unless improvements are made in case ascertainment, case validation and recording activities, the evidence suggests that the CHCS will not be able to provide the same quality of information for needs assessment and surveillance of very low birthweight infants in relation to cerebral palsy as is provided by a specialist case register.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_288",
+    "question": "Uniformity of evidence-based treatments in practice?",
+    "context": "Various factors contribute to the effective implementation of evidence-based treatments (EBTs). In this study, cognitive processing therapy (CPT) was administered in a Veterans Affairs (VA) posttraumatic stress disorder (PTSD) specialty clinic in which training and supervision were provided following VA implementation guidelines. The aim was to (a) estimate the proportion of variability in outcome attributable to therapists and (b) identify characteristics of those therapists who produced better outcomes. We used an archival database of veterans (n = 192) who completed 12 sessions of CPT by therapists (n = 25) who were trained by 2 nationally recognized trainers, 1 of whom also provided weekly group supervision. Multilevel modeling was used to estimate therapist effects, with therapists treated as a random factor. The supervisor was asked to retrospectively rate each therapist in terms of perceived effectiveness based on supervision interactions. Using single case study design, the supervisor was interviewed to determine what criteria she used to rate the therapists and emerging themes were coded. When initial level of severity on the PTSD Checklist (PCL; McDonald&Calhoun, 2010; Weathers, Litz, Herman, Huska,&Keane, 1993) was taken into account, approximately 12% of the variability in the PCL at the end of treatment was due to therapists. The trainer, blind to the results, identified the following characteristics and actions of effective therapists: effectively addressing patient avoidance, language used in supervision, flexible interpersonal style, and ability to develop a strong therapeutic alliance.",
+    "answer": "This study adds to the growing body of literature documenting the importance of the individual therapist as an important factor in the change process.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_258",
+    "question": "Are the arginine vasopressin V1a receptor microsatellites related to hypersexuality in children with a prepubertal and early adolescent bipolar disorder phenotype?",
+    "context": "To examine family-based transmission of the number of 5' flanking arginine vasopressin V1a receptor (AVPR1A) microsatellites, which include [(GATA)(14)] and complex [(CT)(4)-TT-(CT)(8)-(GT)(24)]repeats, in probands with a prepubertal and early adolescent bipolar disorder phenotype (PEA-BP). Preferential transmission of the number of AVPR1A microsatellite repeats to hypersexual and uninhibited people-seeking probands was hypothesized, based on reports from preclinical work in the literature. Probands were 83 participants in an ongoing controlled study of PEA-BP. The PEA-BP phenotype was defined by DSM-IV mania with at least one of the cardinal symptoms of mania (elation and/or grandiosity) to avoid diagnosing mania only by symptoms that overlapped with those for attention-deficit hyperactivity disorder (ADHD). Comprehensive assessment of the probands included separate Washington University in St. Louis Kiddie Schedule for Affective Disorders and Schizophrenia (WASH-U-KSADS) interviews of parents about their children and of children about themselves. Hypersexuality and uninhibited people-seeking were assessed from the corresponding WASH-U-KSADS items. Microsatellite genotyping of the AVPR1A repeats was conducted using fluorescently labeled primers and detected by laser-induced fluorescence. Alleles were determined with the assistance of semi-automated allele-calling software. There were 32 complete, biological trios (28 informative families) for the GATA repeat and 34 complete, biological trios (30 informative families) for the complex repeat. Data were analyzed using case-control and family-based association methods. Preferential transmission of AVPR1A GATA or complex repeats was not significant for hypersexuality or uninhibited people-seeking, using the transmission disequilibrium test. Similarly, case-control analyses found no significant associations between hypersexuality or uninhibited people-seeking and the number of AVPR1A GATA or complex repeats. For p<0.05, there was about 80% power to detect odds ratios of 5.0 and 4.0 (in the family-based analyses) and 3.5 and 2.6 (in the case-control analyses), for allele frequencies of 0.1 and 0.5, respectively.",
+    "answer": "Preferential transmission of AVPR1A to hypersexual or uninhibited people-seeking probands was not supported.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_857",
+    "question": "Is double-balloon enteroscopy an accurate method to diagnose small-bowel disorders?",
+    "context": "The aim of this study was to analyze the contribution of the double-balloon enteroscopy (DBE) for diagnosis of the small bowel disorders. Forty-four patients (20 women, 24 men; mean age 53.5 years-old, range 21-89 years) with chronic gastrointestinal bleeding, diarrhea, polyposis, weight-loss, Roux-en-Y surgery, and other indications underwent DBE. Twenty patients had occult or obscure gastrointestinal bleeding. The source of bleeding was identified in 15/20 (75%): multiple angiodysplasias in four, arterial-venous malformation beyond the ligament of Treitz in two that could be treated with injection successfully. Other diagnoses included: duodenal adenocarcinoma, jejunal tuberculosis, erosions and ulcer of the jejunum. Of 24 patients with other indications, the diagnosis could be achieved in 18 of them (75%), including: two lymphomas, plasmocytoma, Gardner's syndrome, Peutz-Jeghers' syndrome, familial adenomatous polyposis, Beh\u00e7et's disease, jejunal submucosal lesion, lymphangiectasia due to blastomycosis and unspecific chronic jejunitis. Of three cases with Roux-en-Y reconstruction, two underwent DBE in order to perform biopsies of the excluded duodenum. Additionally, two patients underwent DBE to exclude Crohn's disease and lymphoma of the small bowel. The mean length of small bowel examination was 240 +/- 50 cm during a single approach. The diagnostic yield was 75% (33/44 cases) and therapeutic yield was 63.6%. No major complications were observed, only minor complication such as sore throat in 4/44 (9.1%).",
+    "answer": "1. DBE is a safe and and accurate method to diagnose small bowel disorders; 2. this method permits chromoscopy, biopsies and treatment of the lesions.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_193",
+    "question": "Metered-dose inhalers. Do health care providers know what to teach?",
+    "context": "The specific aim of this investigation was to evaluate the proficiency of health care providers and patients in the proper use of metered-dose inhalers. Health care providers, which include house staff, nurses, and respiratory care practitioners who provide care to patients with asthma in the primary general medicine clinic or the pulmonary medicine clinic of a university-county hospital in which patients were referred, were surveyed and assigned a performance score regarding the knowledge base of the appropriate use of metered-dose inhalers. Patients who attended the primary care general medicine and pulmonary subspecialty clinic were also assessed as to their proficiency in the use of metered-dose inhalers. A significant percentage of patients had a poor understanding of the technique used with the metered-dose inhaler. House staff and nursing staff were also less proficient in the proper use of the metered-dose inhaler. The respiratory care practitioners were the most knowledgeable of the health care providers.",
+    "answer": "This study confirms that a large percentage of patients use metered-dose inhalers improperly. It also demonstrates a significant lack of understanding by health care providers of the proper use of metered-dose inhalers. Furthermore, this study supports the use of respiratory care practitioners in the outpatient setting, since they were the most proficient among all the health care providers in the proper use of metered-dose inhalers.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_42",
+    "question": "Can a practicing surgeon detect early lymphedema reliably?",
+    "context": "Lymphedema may be identified by simpler circumference changes as compared with changes in limb volume. Ninety breast cancer patients were prospectively enrolled in an academic trial, and seven upper extremity circumferences were measured quarterly for 3 years. A 10% volume increase or greater than 1 cm increase in arm circumference identified lymphedema with verification by a lymphedema specialist. Sensitivity and specificity of several different criteria for detecting lymphedema were compared using the academic trial as the standard. Thirty-nine cases of lymphedema were identified by the academic trial. Using a 10% increase in circumference at two sites as the criterion, half the lymphedema cases were detected (sensitivity 37%). When using a 10% increase in circumference at any site, 74.4% of cases were detected (sensitivity 49%). Detection by a 5% increase in circumference at any site was 91% sensitive.",
+    "answer": "An increase of 5% in circumference measurements identified the most potential lymphedema cases compared with an academic trial.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_243",
+    "question": "Diffusion-weighted echo-planar MR imaging of primary parotid gland tumors: is a prediction of different histologic subtypes possible?",
+    "context": "Our aim was to determine the value of echo-planar diffusion-weighted MR imaging (epiDWI) in differentiating various types of primary parotid gland tumors. One hundred forty-nine consecutive patients with suspected tumors of the parotid gland were examined with an epiDWI sequence by using a 1.5T unit. Image analysis was performed by 2 radiologists independently, and the intraclass correlation coefficient was computed. Histologic diagnosis was obtained in every patient. For comparison of apparent diffusion coefficients (ADCs), a paired 2-tailed Student t test with a Bonferroni correction was used. In 136 patients, a primary parotid gland tumor was confirmed by histology. Among the observers, a high correlation was calculated (0.98). ADC values of pleomorphic adenomas were significantly higher than those of all other entities, except for myoepithelial adenomas (P = .054). ADC values of Warthin tumors were different from those of myoepithelial adenomas, lipomas, and salivary duct carcinomas (P<.001, 0.013, and .037, respectively). Mucoepidermoid carcinomas, acinic cell carcinomas, and basal cell adenocarcinomas were not differentiable from Warthin tumors (P = .094, .396, and .604, respectively).",
+    "answer": "epiDWI has the potential to differentiate pleomorphic adenoma and myoepithelial adenomas from all other examined entities. Due to an overlap not only within the group of benign and malignant lesions but also between groups, diagnoses should not be addressed on the basis of ADC values solely. Therefore, further studies combining DWI, morphologic criteria, and probably other MR imaging techniques seem warranted.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_945",
+    "question": "The clinical significance of bile duct sludge: is it different from bile duct stones?",
+    "context": "Some patients with suspected common bile duct (CBD) stones are found to have sludge and no stones. Although sludge in the gallbladder is a precursor of gallbladder stones, the significance of bile duct sludge (BDS) is poorly defined. This study aimed to compare BDS with bile duct stones in terms of frequency, associated risk factors, and clinical outcome after endoscopic therapy. The study enrolled 228 patients who underwent therapeutic endoscopic retrograde cholangiopancreatography (ERCP) for suspected choledocholithiasis. The patients were divided into two groups: patients with BDS but no stones on ERCP and patients with CBD stones. The presence of risk factors for bile duct stones (age, periampullary diverticulum, ductal dilation or angulation, previous open cholecystectomy) were assessed at ERCP. Follow-up data (36 +/- 19 months) were obtained from medical records and by patient questioning. Bile duct sludge occurred in 14% (31/228) of patients and was more common in females. After endoscopic clearance, CBD stones recurred in 17% (33/197) of the patients with CBD stones, and in 16% (5/31) of the patients with BDS (p = 0.99). Common bile duct dilation was less common in the sludge group. The other known risk factors for recurrent CBD stones (age, previous open cholecystectomy, bile duct angulation, and the presence of a peripampullary diverticulum) were not statistically different between the two groups.",
+    "answer": "The findings indicate that the clinical significance of symptomatic BDS is similar to that of CBD stones. Bile duct sludge seems to be an early stage of choledocholithiasis.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_815",
+    "question": "The insertion allele of the ACE gene I/D polymorphism. A candidate gene for insulin resistance?",
+    "context": "The insertion/deletion (ID) polymorphism of the angiotensin-converting enzyme (ACE) gene has been associated with increased coronary heart disease (CHD), although the mechanism of this association is not apparent. We tested the hypothesis that the deletion allele of the ACE gene is associated with insulin resistance. We related ACE genotype to components of the insulin-resistance syndrome in 103 non-insulin-dependent diabetic (NIDDM) and 533 nondiabetic white subjects. NIDDM subjects with the DD genotype had significantly lower levels of specific insulin (DD 38.6, ID 57.1, and II 87.4 pmol.L-1 by ANOVA, P = .011). Non-insulin-treated subjects with the DD genotype had increased insulin sensitivity by HOMA % (DD 56.4%, II 29.4%, P = .027) and lower levels of des 31,32 proinsulin (DD 3.3, II 7.6 pmol.L-1, P = .012) compared with II subjects. There were no differences in prevalence of CHD or levels of blood pressure, serum lipids, or plasminogen activator inhibitor-1 (PAI-1) activity between the three ACE genotypes. In nondiabetic subjects there were no differences in insulin sensitivity, levels of insulin-like molecules, blood pressure, PAI-1, serum lipids, or CHD prevalence between the three ACE genotypes.",
+    "answer": "We conclude that increased cardiovascular risk of the DD genotype is not mediated through insulin resistance or abnormalities in fibrinolysis. Conversely, we report an increased sensitivity in NIDDM subjects with the ACE DD genotype.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_145",
+    "question": "Are endothelial cell patterns of astrocytomas indicative of grade?",
+    "context": "The most common primary brain tumors in children and adults are of astrocytic origin. Classic histologic grading schemes for astrocytomas have included evaluating the presence or absence of nuclear abnormalities, mitoses, vascular endothelial proliferation, and tumor necrosis. We evaluated the vascular pattern of 17 astrocytoma surgical specimens (seven from children and 10 from adults), and four normal brains obtained at autopsy, utilizing antibody to glial fibrillary acidic protein (GFAP) and von Willebrand factor (vWF) utilizing confocal microscopy. A modified WHO classification was used. All tumor cases showed cells positive for GFAP. Control tissues showed a few, widely separated vessels. Pilocytic astrocytomas (four cases) showed lacy clusters of small-to-medium sized vessels, with intact vessel wall integrity. Diffuse, low grade astrocytoma (three cases) showed a staining pattern similar to control tissue; intermediate grade (one case), anaplastic astrocytoma (three cases) and gliobastoma multiforme (six cases) showed an increased vessel density with multiple small vessels (glomeruloid clusters), some with prominent intimal hyperplasia, loss of vessel wall integrity, and with numerous vWF-positive single cells/microvessels within the tumor substance.",
+    "answer": "Evaluation of astrocytomas utilizing antibody to vWF and confocal microscopy aids in the grading of these neoplasms.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_632",
+    "question": "Do overweight children necessarily make overweight adults?",
+    "context": "To compare growth curves of body mass index from children to adolescents, and then to young adults, in Japanese girls and women in birth cohorts born from 1930 to 1999. Retrospective repeated cross sectional annual nationwide surveys (national nutrition survey, Japan) carried out from 1948 to 2005. Japan. 76,635 females from 1 to 25 years of age. Body mass index. Generally, body mass index decreased in preschool children (2-5 years), increased in children (6-12 years) and adolescents (13-18 years), and slightly decreased in young adults (19-25 years) in these Japanese females. However, the curves differed among birth cohorts. More recent cohorts were more overweight as children but thinner as young women. The increments in body mass index in early childhood were larger in more recent cohorts than in older cohorts. However, the increments in body mass index in adolescents were smaller and the decrease in body mass index in young adults started earlier, with lower peak values in more recent cohorts than in older cohorts. The decrements in body mass index in young adults were similar in all birth cohorts.",
+    "answer": "An overweight birth cohort in childhood does not necessarily continue to be overweight in young adulthood. Not only secular trends in body mass index at fixed ages but also growth curves for wide age ranges by birth cohorts should be considered to study obesity and thinness. Growth curves by birth cohorts were produced by a repeated cross sectional annual survey over nearly six decades.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_138",
+    "question": "Could different follow-up modalities play a role in the diagnosis of asymptomatic endometrial cancer relapses?",
+    "context": "To determine current practice and to assess the value of routine follow-up procedures for endometrial cancer surveillance. To discuss whether such procedures are feasible and effective to identify asymptomatic recurrences and describe the pattern of relapse detected by procedures. The records of 282 consecutive women with recurrent endometrial cancer treated from 1986 to 2005 were retrospectively collected in 8 Italian institutions. Primary disease, clinical history, and recurrence features and data were analyzed. Thirty-five (12.4%) of 282 patients had recurrence in vaginal vault, 51 patients (18.0%) had recurrence in central pelvis, 14 patients (4.9%) had recurrence in pelvic wall, and 39 patients (13.8%) had recurrence in lymph nodes. One-hundred twenty-eight patients (45.3%) showed a distant relapse, whereas 15 patients (5.3%) developed both distant relapse and local relapse. The site of relapse influenced survival because the patients with vaginal vault recurrences lived significantly longer than the patients with recurrences in other sites. Eighty (28.4%) of the 282 patients became symptomatic and anticipated the scheduled visit, 37 (13.1 %) of the patients reported their symptoms during the follow-up meeting, and 165 (58.5 %) of the patients were asymptomatic and the diagnostic path was introduced by a planned visit or examination. Among the asymptomatic patients, the first procedure that led to further examinations was clinical visit alone for 60 (36.4%) of 165 patients, imaging for 103 patients (62.4%), and cytologic examination for 2 patients (1.2%). Symptoms at recurrence can predict survival: patients with an asymptomatic recurrence had a median survival time from relapse of 35 months versus 13 months if they had a symptomatic repetition (P = 0.0001).",
+    "answer": "Follow-up after endometrial cancer treatment varies in Italy. In this retrospective study, women with asymptomatic recurrence have shown a better clinical outcome compared with those with symptomatic relapse. The optimal approach is actually unknown, and guidelines comparing follow-up protocols have not been established. Prospective cost-effectiveness studies are needed.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_918",
+    "question": "Should displaced midshaft clavicular fractures be treated surgically?",
+    "context": "This study was designed to compare clinical effectiveness of operative with nonoperative treatment for displaced midshaft clavicular fractures (DMCF). We systematically searched electronic databases (MEDILINE, EMBASE, CLINICAL, OVID, BIOSIS and Cochrane registry of controlled clinical trials) to identify randomized controlled trials (RCTs) in which operative treatment was compared with nonoperative treatment for DMCF from 1980 to 2012. The methodologic quality of trials was assessed. Data from chosen studies were pooled with using of fixed-effects and random-effects models with mean differences and risk ratios for continuous and dichotomous variables, respectively. Four RCTs with a total of 321 patients were screened for the present study. Results showed that the operative treatment was superior to the nonoperative treatment regarding the rate of nonunion [95\u00a0% confidence interval (CI) (0.05, 0.43), P\u00a0=\u00a00.0004], malunion [95\u00a0% CI (0.06, 0.34), P\u00a0<\u00a00.00001] and overall complication [95\u00a0% CI (0.43-0.76), P\u00a0=\u00a00.0001]. Subgroup analyses of complications revealed that significant differences were existed in the incidence of neurologic symptoms [95\u00a0% CI (0.20, 0.74), P\u00a0=\u00a00.004] and dissatisfaction with appearance [95\u00a0% CI (0.19, 0.65), P\u00a0=\u00a00.001]. Lack of consistent and standardized assessment data, insufficiency analysis that carried out showed improved functional outcomes (P\u00a0<\u00a00.05) in operative treatment.",
+    "answer": "The available evidence suggests that the operative treatment for DMCF is associated with a lower rate of nonunion, malunion and complication than nonoperative treatment. This study supports traditional primary operative treatment for DMCF in active adults.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_868",
+    "question": "Target Serum Urate: Do Gout Patients Know Their Goal?",
+    "context": "To examine gout patients' knowledge of their condition, including the central role of achieving and maintaining the serum urate (SU) goal with the use of urate-lowering therapy (ULT). This study of 612 gout patients was conducted at a Veterans Affairs medical center. Gout patients were included based on administrative diagnostic codes and receipt of at least 1 allopurinol prescription over a 1-year period. Questionnaires were mailed to patients and linked to medical records data. The questionnaire included gout-specific knowledge questions, the Patient Activation Measure, and self-reported health outcomes. Knowledge was assessed descriptively. Multivariable logistic regression was used to determine predictors of SU goal knowledge. Associations of knowledge with health outcomes were examined in exploratory analyses. The questionnaire had a 62% response rate. Only 14% of patients knew their SU goal, while the majority answered correctly for the other 5 gout-specific knowledge questions. In adjusted analyses, having a rheumatologist as initial prescriber (odds ratio [OR] 3.0 [95% confidence interval (95% CI) 1.4-6.2]) and knowing all of the other 5 gout-specific knowledge questions (OR 2.1 [95% CI 1.3-3.4]) were associated with greater odds of knowing the SU goal. SU goal knowledge was associated with self-reported global health status, but not with self-reported health-related quality of life or gout-specific health status.",
+    "answer": "There is a knowledge deficit regarding the SU treatment goal among gout patients receiving ULT, despite generally high levels of other gout-specific knowledge. SU goal information may be an important and underutilized concept among providers treating gout patients.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_894",
+    "question": "Is the first urinary albumin/creatinine ratio (ACR) in women with suspected preeclampsia a prognostic factor for maternal and neonatal adverse outcome?",
+    "context": "The aim of this study was to determine the prognostic value of the first urinary albumin/creatinine ratio (ACR) for adverse maternal and neonatal outcomes and how it relates to other prognostic factors. We performed a retrospective cohort study from December 2009 to February 2012 with analysis of demographic, clinical and biochemical data from two obstetric day assessment units in hospitals in Southeast Scotland. We included 717 pregnant women, with singleton pregnancies after 20 weeks' gestation, referred for evaluation of suspected preeclampsia and having their first ACR performed. The ability of ACR to predict future outcomes was assessed in both univariable and multivariable logistic regression models. The latter assessed its prognostic value independent of (adjusting for) existing prognostic factors. Primary outcome measures were maternal and neonatal composite adverse outcomes, and a secondary outcome was gestation at delivery. In all, 204 women (28.5%) experienced a composite adverse maternal outcome and 146 women (20.4%) experienced a composite adverse neonatal outcome. Multivariate analysis of log-transformed ACR demonstrated that a 1-unit increase in log ACR is associated with an increased odds of adverse maternal [odds ratio 1.60, 95% confidence interval (CI) 1.45-1.80] and adverse neonatal (odds ratio 1.15, 95% CI 1.02-1.29) composite outcomes, and with reduced gestational age at delivery (coefficient: -0.46, 95% CI -0.54 to -0.38).",
+    "answer": "ACR is an independent prognostic factor for maternal and neonatal adverse outcomes in suspected preeclampsia. ACR may be useful to inform risk predictions within a prognostic model.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_344",
+    "question": "Clinician assessment for acute chest syndrome in febrile patients with sickle cell disease: is it accurate enough?",
+    "context": "To determine whether the use of empiric chest radiography (CXR) is of significant value in detecting clinically unsuspected acute chest syndrome (ACS) in febrile patients with sickle cell disease (SCD). Patients with SCD presenting to the emergency department and hematology clinic with temperature greater than or equal to 38 degrees C were prospectively evaluated using a physician-completed questionnaire. The questionnaire included inquiries into the patient's physical signs and symptoms and the physician's clinical impression for the presence of ACS. The questionnaire was completed before obtaining CXR results in all patients. Seventy-three patients with SCD with 96 febrile events were evaluated over a 1-year period. Twenty-four percent (23/96) of the patients had CXR evidence of ACS. On the basis of the questionnaire data, 61% (14/23) of ACS cases were not clinically suspected by the evaluating physician before obtaining CXR. Comparing the patients with and without ACS revealed that, with the exception of splinting (4/23 [17%] versus 0/73 [0%]), no symptom or physical examination finding helped to identify which patients had ACS. Fifty-seven percent of patients with ACS had completely normal findings on physical examination. The presentation of patients with clinically detected versus clinically unsuspected ACS also did not differ significantly. Length of hospitalization, oxygen use, and need for transfusion were the same in both the unsuspected and detected ACS groups. Overall physician sensitivity for predicting ACS was only 39%, and diagnostic accuracy did not improve significantly with increasing levels of pediatric training.",
+    "answer": "ACS is common in patients with SCD who present with fever and was grossly underestimated by evaluating physicians. History and physical examination appear to be of little value in defining which febrile patients require CXR. In view of the mortality and morbidity associated with ACS, empiric CXR should be considered when evaluating a febrile patient with SCD.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_141",
+    "question": "Is horizontal semicircular canal ocular reflex influenced by otolith organs input?",
+    "context": "To clarify whether horizontal canal ocular reflex is influenced by otolith organs input. The subjects were seven healthy humans. The right ear was stimulated using ice-water. Each subject was kept in a left-ear-down position for 20 s and then repositioned to a prone position, a right-ear-down position and a supine position with 20 s intervals. Nystagmus was analysed using three-dimensional video-oculography. Eye movements in the supine position and the prone position were not in a symmetric fashion. Nystagmus in the left-ear-down position and the right-ear-down position were not symmetric either. These phenomena indicate that the axis of the eyeball rotation was affected by the shift of the direction of gravity exerted on the head.",
+    "answer": "Otolith organs input influences the axis of horizontal semicircular canal ocular reflex; therefore, the plane of compensatory eye movements induced by the horizontal canal stimulation is not always parallel to the canal.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_223",
+    "question": "Diagnostic and therapeutic ureteroscopy: is dilatation of ureteral meatus always necessary?",
+    "context": "To assess the feasibility and safety of diagnostic or therapeutic semirigid ureteroscopy without ureteral meatus dilatation. A comparative, retrospective study was conducted of patients undergoing ureteroscopy from January 2000 to May 2008. For data analysis purposes, the population was divided into two groups based on whether ureteroscopy had been performed with (Group 1) or without (Group 2) ureteral meatus dilatation. Variables recorded included age, sex, type of procedure, surgical diagnosis, passive or active dilatation, number of stones, stone location, stone diameter, peroperative and postoperative complications, internal urinary diversion after the procedure, therapeutic success rate, operating time, and hospital stay duration. A 8-9.8 Fr Wolf semirigid ureteroscope was used. Descriptive statistics of the population and cohorts were performed, providing medians, quartiles, and limit values for non-normally distributed interval variables, and absolute and relative frequencies for categorical variables. Shapiro-Wilk's, Mann-Whitney's U, Chi-square, and Fisher's exact tests were used for statistical analysis. A value of p 2 alpha<or = 0.005 was considered statistically significant. Arcus Quickstat Biomedical 1.0 software was used. Among the 306 ureteroscopies studied, 286 performed in 256 patients were analyzed. Median age was 50 years (16-83), 59% of patients were male, and elective ureteroscopy was performed in 183 patients (64%). Group 1: 191 ureteroscopies, Group 2: 95 ureteroscopies. Stone location: 149 in distal ureter, 60 in middle ureter, and 35 in proximal ureter. Sixty-nine percent of stones had sizes ranging from 5 and 10 mm. The overall success rate was 86.5%. There were 5 peroperative and 22 postoperative complications, with no statistically significant differences between the groups.",
+    "answer": "In selected cases, ureteroscopy may be performed without ureteral meatus dilatation with success and morbidity rates similar to when the procedure is performed with meatal dilatation.",
+    "label": 1,
+    "domain": "medical",
+    "source": "PubMedQA"
+  },
+  {
+    "id": "medical_399",
+    "question": "Emergency double-balloon enteroscopy combined with real-time viewing of capsule endoscopy: a feasible combined approach in acute overt-obscure gastrointestinal bleeding?",
+    "context": "There are few data concerning emergency double-balloon enteroscopy (DBE) and its usefulness in the management of severe acute obscure gastrointestinal bleeding (OGIB). The aim of this retrospective study was to evaluate emergency DBE and capsule endoscopy (CE) in patients with overt OGIB, analyzing the feasibility of this combined approach. Emergency DBE in patients with overt OGIB was defined as performance within 24\u2009h of symptom onset. We reported 27 patients (16 men, mean age: 64.6\u2009\u00b1\u200917.9 years) with overt severe bleeding who underwent 29 emergency DBE (22 anterograde, 7 retrograde). Of 27 patients, 16 (59.3%) underwent CE with real time (RT) viewing. Patients were diagnosed with the following: Dieulafoy's lesion (DL; n\u2009=\u200911, 40.7%), angioectasia (n\u2009=\u20097, 25.9%), tumors (n\u2009=\u20094, 14.8%), diverticulum (n\u2009=\u20093, 11.1%), ulcers (n\u2009=\u20092, 7.4%). We diagnosed 23 lesions amenable to endoscopic hemostasis and successfully treated 21 of them (77.8%). DL detection rate was statistically higher in the emergency DBE group than in OGIB patients with DBE done 24\u2009h after symptom onset (40.7% vs 0.9%, respectively, P\u2009<\u20090.001). Combined approach with RT viewing by CE correctly modified DBE management in four patients (25%).",
+    "answer": "Emergency DBE is feasible, safe and effective in acute OGIB and may avoid major surgery, diagnosing and successfully treating most patients. Combined approach with RT viewing by CE is especially useful to identify recurrent bleeding vascular lesions such as DL that may be easily misdiagnosed by non-emergency DBE.",
+    "label": 0,
+    "domain": "medical",
+    "source": "PubMedQA"
+  }
+]

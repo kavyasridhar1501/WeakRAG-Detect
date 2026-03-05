@@ -1,0 +1,43 @@
+{
+  "domain": "medical",
+  "total_entities": 4,
+  "n_clusters": 4,
+  "hallucination_types": [
+    {
+      "cluster_id": 0,
+      "label": "fabricated_citations",
+      "description": "Cluster 0: entities grouped by semantic similarity.",
+      "examples": [
+        "United Kingdom"
+      ],
+      "count": 1
+    },
+    {
+      "cluster_id": 1,
+      "label": "wrong_party_names",
+      "description": "Cluster 1: entities grouped by semantic similarity.",
+      "examples": [
+        "Clinical Trials"
+      ],
+      "count": 1
+    },
+    {
+      "cluster_id": 2,
+      "label": "incorrect_dates_numbers",
+      "description": "Cluster 2: entities grouped by semantic similarity.",
+      "examples": [
+        "South Africa"
+      ],
+      "count": 1
+    },
+    {
+      "cluster_id": 3,
+      "label": "misattributed_obligations",
+      "description": "Cluster 3: entities grouped by semantic similarity.",
+      "examples": [
+        "The Young"
+      ],
+      "count": 1
+    }
+  ]
+}
