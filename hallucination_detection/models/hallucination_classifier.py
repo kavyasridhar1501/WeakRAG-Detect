@@ -309,7 +309,10 @@ class LogisticRegressionClassifier:
 
         self.random_state = random_state
         self.tfidf = TfidfVectorizer(max_features=5000, sublinear_tf=True)
-        self.clf = LogisticRegression(max_iter=1000, random_state=random_state, C=1.0)
+        self.clf = LogisticRegression(
+            max_iter=1000, random_state=random_state, C=1.0,
+            class_weight="balanced",  # handles label skew from weak supervision
+        )
         self._tfidf_fitted = False
 
         if _ST_AVAILABLE:
