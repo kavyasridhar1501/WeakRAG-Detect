@@ -53,7 +53,15 @@ class WeakLabelPipeline:
         """Instantiate all three labeling functions."""
         logger.info("Initialising WeakLabelPipeline …")
         self.entailment_lf = EntailmentLF()
-        self.consistency_lf = SemanticConsistencyLF()
+        # Lower thresholds for LLM-free answer-context alignment mode.
+        # Default 0.85/0.70 was designed for LLM self-consistency where
+        # repeated generations of the same answer have cosine ~0.90+.
+        # In proxy mode (answer vs context sentence) MiniLM-L6 cosine
+        # typically ranges 0.40–0.70, so the thresholds must be shifted down.
+        self.consistency_lf = SemanticConsistencyLF(
+            threshold_faithful=0.65,
+            threshold_hallucinated=0.45,
+        )
         self.reflection_lf = ReflectionTokenLF()
 
     # ------------------------------------------------------------------
