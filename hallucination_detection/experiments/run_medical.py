@@ -72,6 +72,10 @@ def main():
     pipeline.analyze_lf_coverage(L)
 
     from evaluation.metrics import HallucinationEvaluator
+    # Remove stale CSV log so compare_methods only shows this run's results.
+    _stale_log = os.path.join(RESULTS_DIR, "evaluation_log.csv")
+    if os.path.exists(_stale_log):
+        os.remove(_stale_log)
     evaluator = HallucinationEvaluator()
     from models.hallucination_classifier import LogisticRegressionClassifier
 
@@ -114,6 +118,26 @@ def main():
     co_result = co_trainer.fit(seed_data, unlabeled_pool, soft_labels, gold_test[:50])
     co_preds = co_result["final_model"].predict(gold_test)
     evaluator.evaluate(co_preds.tolist(), gold_labels, "Co-Training", "medical")
+
+    # ------------------------------------------------------------------
+    # Step 6b: DistilBERT fine-tuning on self-training labeled pool
+    # ------------------------------------------------------------------
+    logger.info("Step 6b: DistilBERT fine-tuning …")
+    try:
+        from models.hallucination_classifier import DistilBERTClassifier
+        distilbert = DistilBERTClassifier()
+        distilbert.train(
+            st_result["labeled_pool"],
+            st_result["labels"],
+            val_data=gold_test[:50],
+            val_labels=[d["label"] for d in gold_test[:50]],
+            save_dir=os.path.join(RESULTS_DIR, "distilbert_ckpt"),
+        )
+        distilbert_preds = distilbert.predict(gold_test)
+        evaluator.evaluate(distilbert_preds.tolist(), gold_labels,
+                           "Self-Training + DistilBERT", "medical")
+    except Exception as exc:
+        logger.warning("DistilBERT training skipped: %s", exc)
 
     # ------------------------------------------------------------------
     # Step 7: Pattern mining
