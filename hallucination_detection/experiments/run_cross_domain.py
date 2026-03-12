@@ -124,6 +124,19 @@ def main():
         evaluator.evaluate(med_preds_ft.tolist(), med_labels_ft,
                            f"Legal→Medical (few-shot n={N_SEEDS})", "medical")
 
+        try:
+            from models.hallucination_classifier import DistilBERTClassifier
+            distilbert_med = DistilBERTClassifier()
+            distilbert_med.train(
+                legal_result["labeled_pool"] + med_seeds,
+                legal_result["labels"] + [ex["label"] for ex in med_seeds],
+            )
+            med_preds_distilbert = distilbert_med.predict(med_gold_test_ft)
+            evaluator.evaluate(med_preds_distilbert.tolist(), med_labels_ft,
+                               "Legal→Medical (few-shot DistilBERT)", "medical")
+        except Exception as exc:
+            logger.warning("DistilBERT medical few-shot skipped: %s", exc)
+
     # ------------------------------------------------------------------
     # Step 3: Zero-shot transfer to Scientific
     # ------------------------------------------------------------------
@@ -153,6 +166,19 @@ def main():
         sci_labels_ft = [ex["label"] for ex in sci_gold_test_ft]
         evaluator.evaluate(sci_preds_ft.tolist(), sci_labels_ft,
                            f"Legal→Scientific (few-shot n={N_SEEDS})", "scientific")
+
+        try:
+            from models.hallucination_classifier import DistilBERTClassifier
+            distilbert_sci = DistilBERTClassifier()
+            distilbert_sci.train(
+                legal_result["labeled_pool"] + sci_seeds,
+                legal_result["labels"] + [ex["label"] for ex in sci_seeds],
+            )
+            sci_preds_distilbert = distilbert_sci.predict(sci_gold_test_ft)
+            evaluator.evaluate(sci_preds_distilbert.tolist(), sci_labels_ft,
+                               "Legal→Scientific (few-shot DistilBERT)", "scientific")
+        except Exception as exc:
+            logger.warning("DistilBERT scientific few-shot skipped: %s", exc)
 
     # ------------------------------------------------------------------
     # Step 4: Cross-domain pattern comparison
