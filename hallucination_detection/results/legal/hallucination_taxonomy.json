@@ -1,0 +1,81 @@
+{
+  "domain": "legal",
+  "total_entities": 70,
+  "n_clusters": 6,
+  "hallucination_types": [
+    {
+      "cluster_id": 1,
+      "label": "wrong_party_names",
+      "description": "Cluster 1: entities grouped by semantic similarity.",
+      "examples": [
+        "Holdings",
+        "Nexus Corp",
+        "LLC",
+        "Solaris Ltd and Meridian Group",
+        "Solaris Ltd",
+        "Meridian Group's"
+      ],
+      "count": 20
+    },
+    {
+      "cluster_id": 3,
+      "label": "misattributed_obligations",
+      "description": "Cluster 3: entities grouped by semantic similarity.",
+      "examples": [
+        "45 days",
+        "90 days",
+        "120 days",
+        "7 days",
+        "14 days"
+      ],
+      "count": 13
+    },
+    {
+      "cluster_id": 0,
+      "label": "fabricated_citations",
+      "description": "Cluster 0: entities grouped by semantic similarity.",
+      "examples": [
+        "Mar 1, 2023",
+        "Sep 30, 2022",
+        "Feb 28, 2021",
+        "Nov 11, 2020",
+        "15, 2024"
+      ],
+      "count": 11
+    },
+    {
+      "cluster_id": 2,
+      "label": "incorrect_dates_numbers",
+      "description": "Cluster 2: entities grouped by semantic similarity.",
+      "examples": [
+        "Delta Inc"
+      ],
+      "count": 10
+    },
+    {
+      "cluster_id": 4,
+      "label": "invented_legal_terms",
+      "description": "Cluster 4: entities grouped by semantic similarity.",
+      "examples": [
+        "Georgia",
+        "Nevada",
+        "Ohio",
+        "Florida",
+        "Washington"
+      ],
+      "count": 10
+    },
+    {
+      "cluster_id": 5,
+      "label": "misattribution",
+      "description": "Answer text is technically present in the context but attributed to the wrong party or clause \u2014 a common error in ContractNLI data (LegalInsight key insight).",
+      "examples": [
+        "1000",
+        "12500",
+        "25000",
+        "750"
+      ],
+      "count": 6
+    }
+  ]
+}

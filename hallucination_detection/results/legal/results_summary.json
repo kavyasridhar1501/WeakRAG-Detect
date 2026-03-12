@@ -2,12 +2,72 @@
   "domain": "legal",
   "results": [
     {
-      "method": "Source (Legal \u2192 Legal)",
+      "method": "Seeds Only (n=30)",
+      "domain": "legal",
+      "precision": "0.6923",
+      "recall": "0.8308",
+      "f1": "0.7552",
+      "accuracy": "0.825",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Seeds + Snorkel",
+      "domain": "legal",
+      "precision": "0.8308",
+      "recall": "0.8308",
+      "f1": "0.8308",
+      "accuracy": "0.89",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Self-Training",
+      "domain": "legal",
+      "precision": "0.8308",
+      "recall": "0.8308",
+      "f1": "0.8308",
+      "accuracy": "0.89",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Co-Training",
+      "domain": "legal",
+      "precision": "0.871",
+      "recall": "0.8308",
+      "f1": "0.8504",
+      "accuracy": "0.905",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Self-Training + DistilBERT",
       "domain": "legal",
       "precision": "1.0",
+      "recall": "0.8308",
+      "f1": "0.9076",
+      "accuracy": "0.945",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Fully Supervised",
+      "domain": "legal",
+      "precision": "1.0",
+      "recall": "1.0",
+      "f1": "1.0",
+      "accuracy": "1.0",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Source (Legal \u2192 Legal)",
+      "domain": "legal",
+      "precision": "0.84",
       "recall": "0.9692",
-      "f1": "0.9844",
-      "accuracy": "0.99",
+      "f1": "0.9",
+      "accuracy": "0.93",
       "auc_roc": "N/A",
       "n_examples": "200"
     }

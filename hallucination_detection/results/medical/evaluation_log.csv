@@ -1,7 +1,0 @@
-method,domain,precision,recall,f1,accuracy,auc_roc,n_examples
-Seeds Only (n=30),medical,0.4641,0.8161,0.5917,0.51,N/A,200
-Seeds + Snorkel,medical,0.4407,0.5977,0.5073,0.495,N/A,200
-Self-Training,medical,0.4407,0.5977,0.5073,0.495,N/A,200
-Co-Training,medical,0.4237,0.8621,0.5682,0.43,N/A,200
-Legal→Medical (zero-shot),medical,0.3556,0.1839,0.2424,0.5,N/A,200
-Legal→Medical (few-shot n=30),medical,0.4396,0.9195,0.5948,0.455,N/A,200

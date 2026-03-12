@@ -1,43 +1,106 @@
 {
   "domain": "medical",
-  "total_entities": 4,
-  "n_clusters": 4,
+  "total_entities": 146,
+  "n_clusters": 6,
   "hallucination_types": [
     {
       "cluster_id": 0,
       "label": "fabricated_citations",
       "description": "Cluster 0: entities grouped by semantic similarity.",
       "examples": [
-        "United Kingdom"
+        "China",
+        "Scotland",
+        "BD",
+        "MR",
+        "VODcasts",
+        "EMS",
+        "Socio",
+        "AAI",
+        "ROP",
+        "SSO"
       ],
-      "count": 1
-    },
-    {
-      "cluster_id": 1,
-      "label": "wrong_party_names",
-      "description": "Cluster 1: entities grouped by semantic similarity.",
-      "examples": [
-        "Clinical Trials"
-      ],
-      "count": 1
-    },
-    {
-      "cluster_id": 2,
-      "label": "incorrect_dates_numbers",
-      "description": "Cluster 2: entities grouped by semantic similarity.",
-      "examples": [
-        "South Africa"
-      ],
-      "count": 1
+      "count": 42
     },
     {
       "cluster_id": 3,
       "label": "misattributed_obligations",
       "description": "Cluster 3: entities grouped by semantic similarity.",
       "examples": [
-        "The Young"
+        "MDA",
+        "GP",
+        "ED",
+        "PPV",
+        "BMI",
+        "PCT",
+        "APTT",
+        "PTH",
+        "Achilles",
+        "NHS"
       ],
-      "count": 1
+      "count": 32
+    },
+    {
+      "cluster_id": 5,
+      "label": "misattribution",
+      "description": "Answer text is technically present in the context but attributed to the wrong party or clause \u2014 a common error in ContractNLI data (LegalInsight key insight).",
+      "examples": [
+        "ACS-NSQIP",
+        "NPBD",
+        "NSR",
+        "APC3",
+        "HCC",
+        "CPM",
+        "APC1",
+        "VCUG",
+        "PBD",
+        "IVF/ICSI"
+      ],
+      "count": 28
+    },
+    {
+      "cluster_id": 2,
+      "label": "incorrect_dates_numbers",
+      "description": "Cluster 2: entities grouped by semantic similarity.",
+      "examples": [
+        "21-29 years",
+        "31A1",
+        "five",
+        "years",
+        "at least half",
+        "the years",
+        "months",
+        "INR",
+        "more than one",
+        "40 years"
+      ],
+      "count": 22
+    },
+    {
+      "cluster_id": 4,
+      "label": "invented_legal_terms",
+      "description": "Cluster 4: entities grouped by semantic similarity.",
+      "examples": [
+        "first",
+        "second"
+      ],
+      "count": 13
+    },
+    {
+      "cluster_id": 1,
+      "label": "wrong_party_names",
+      "description": "Cluster 1: entities grouped by semantic similarity.",
+      "examples": [
+        "15%",
+        "40%",
+        "8%",
+        "100%",
+        "50%",
+        "9%",
+        "27 %",
+        "7 %",
+        "8.2%"
+      ],
+      "count": 9
     }
   ]
 }

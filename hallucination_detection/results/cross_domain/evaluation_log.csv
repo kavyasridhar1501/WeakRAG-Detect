@@ -1,0 +1,3 @@
+method,domain,precision,recall,f1,accuracy,auc_roc,n_examples
+Legal→Scientific (zero-shot),cross_domain,0.7333,0.1009,0.1774,0.49,N/A,200
+Legal→Scientific (few-shot n=30),cross_domain,0.5693,0.7156,0.6341,0.55,N/A,200

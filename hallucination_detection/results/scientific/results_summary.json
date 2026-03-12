@@ -20,6 +20,46 @@
       "accuracy": "0.565",
       "auc_roc": "N/A",
       "n_examples": "200"
+    },
+    {
+      "method": "Legal\u2192Scientific (zero-shot)",
+      "domain": "scientific",
+      "precision": "0.7333",
+      "recall": "0.1009",
+      "f1": "0.1774",
+      "accuracy": "0.49",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Legal\u2192Scientific (few-shot n=30)",
+      "domain": "scientific",
+      "precision": "0.5693",
+      "recall": "0.7156",
+      "f1": "0.6341",
+      "accuracy": "0.55",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Legal\u2192Scientific (zero-shot)",
+      "domain": "scientific",
+      "precision": "0.7333",
+      "recall": "0.1009",
+      "f1": "0.1774",
+      "accuracy": "0.49",
+      "auc_roc": "N/A",
+      "n_examples": "200"
+    },
+    {
+      "method": "Legal\u2192Scientific (few-shot n=30)",
+      "domain": "scientific",
+      "precision": "0.5693",
+      "recall": "0.7156",
+      "f1": "0.6341",
+      "accuracy": "0.55",
+      "auc_roc": "N/A",
+      "n_examples": "200"
     }
   ]
 }

@@ -1,2 +1,2 @@
 method,domain,precision,recall,f1,accuracy,auc_roc,n_examples
-Source (Legal → Legal),legal,1.0,0.9692,0.9844,0.99,N/A,200
+Source (Legal → Legal),legal,0.84,0.9692,0.9,0.93,N/A,200
