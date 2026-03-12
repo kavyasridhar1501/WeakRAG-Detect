@@ -50,13 +50,12 @@ def main():
     np.random.seed(RANDOM_SEED)
 
     from evaluation.metrics import HallucinationEvaluator
-    # Remove stale CSV logs so each domain's compare_methods only shows this
-    # run's results — mirrors the cleanup done in run_legal.py (Step 4) and
-    # run_medical.py before the first evaluator.evaluate call.
-    for _domain in ("legal", "medical", "scientific"):
-        _stale_log = os.path.join(RESULTS_DIR, _domain, "evaluation_log.csv")
-        if os.path.exists(_stale_log):
-            os.remove(_stale_log)
+    # All cross-domain results go to their own isolated directory.
+    _cross_domain_dir = os.path.join(RESULTS_DIR, "cross_domain")
+    os.makedirs(_cross_domain_dir, exist_ok=True)
+    _stale_log = os.path.join(_cross_domain_dir, "evaluation_log.csv")
+    if os.path.exists(_stale_log):
+        os.remove(_stale_log)
     evaluator = HallucinationEvaluator()
 
     # ------------------------------------------------------------------
@@ -87,15 +86,12 @@ def main():
     legal_result = trainer.fit(legal_seeds, legal_pool, soft_labels_legal, legal_gold_test[:50])
     source_model = legal_result["final_model"]
 
-    # Evaluate source on legal (sanity check)
-    legal_preds = source_model.predict(legal_gold_test)
-    legal_labels = [ex["label"] for ex in legal_gold_test]
-    evaluator.evaluate(legal_preds.tolist(), legal_labels, "Source (Legal → Legal)", "legal")
-
     # ------------------------------------------------------------------
-    # Step 2: Zero-shot transfer to Medical
+    # Step 2: Load Medical data (needed for pattern comparison in Step 4)
     # ------------------------------------------------------------------
-    logger.info("Step 2: Zero-shot transfer to Medical (PubMedQA) …")
+    # Medical evaluation is owned by run_medical.py; this step only loads
+    # the data so Step 4 can compare hallucination patterns across domains.
+    logger.info("Step 2: Loading Medical data (PubMedQA) for pattern comparison …")
     medical_data = load_pubmedqa()
     if not medical_data:
         logger.warning("PubMedQA unavailable — using synthetic medical data.")
@@ -103,39 +99,6 @@ def main():
         medical_data = _make_synthetic_medical_data(n=400)
 
     med_gold_test, _ = get_train_test_split(medical_data, test_size=min(200, len(medical_data) // 3))
-    med_labels = [ex["label"] for ex in med_gold_test]
-
-    # Zero-shot: use legal-trained model directly on medical data
-    med_preds_zero = source_model.predict(med_gold_test)
-    evaluator.evaluate(med_preds_zero.tolist(), med_labels,
-                       "Legal→Medical (zero-shot)", "medical")
-
-    # Few-shot adaptation: fine-tune on 30 medical seeds
-    med_gold_test_ft, med_pool = get_train_test_split(medical_data, test_size=min(200, len(medical_data) // 3))
-    med_seeds, med_pool = build_seed_set(med_pool, n_seeds=N_SEEDS, domain="medical_fewshot")
-    if med_seeds:
-        ft_clf = LogisticRegressionClassifier()
-        ft_clf.fit(
-            legal_result["labeled_pool"] + med_seeds,
-            legal_result["labels"] + [ex["label"] for ex in med_seeds],
-        )
-        med_preds_ft = ft_clf.predict(med_gold_test_ft)
-        med_labels_ft = [ex["label"] for ex in med_gold_test_ft]
-        evaluator.evaluate(med_preds_ft.tolist(), med_labels_ft,
-                           f"Legal→Medical (few-shot n={N_SEEDS})", "medical")
-
-        try:
-            from models.hallucination_classifier import DistilBERTClassifier
-            distilbert_med = DistilBERTClassifier()
-            distilbert_med.train(
-                legal_result["labeled_pool"] + med_seeds,
-                legal_result["labels"] + [ex["label"] for ex in med_seeds],
-            )
-            med_preds_distilbert = distilbert_med.predict(med_gold_test_ft)
-            evaluator.evaluate(med_preds_distilbert.tolist(), med_labels_ft,
-                               "Legal→Medical (few-shot DistilBERT)", "medical")
-        except Exception as exc:
-            logger.warning("DistilBERT medical few-shot skipped: %s", exc)
 
     # ------------------------------------------------------------------
     # Step 3: Zero-shot transfer to Scientific
@@ -151,7 +114,7 @@ def main():
 
     sci_preds_zero = source_model.predict(sci_gold_test)
     evaluator.evaluate(sci_preds_zero.tolist(), sci_labels,
-                       "Legal→Scientific (zero-shot)", "scientific")
+                       "Legal→Scientific (zero-shot)", "cross_domain")
 
     # Few-shot adaptation: fine-tune on 30 scientific seeds
     sci_gold_test_ft, sci_pool = get_train_test_split(sci_data, test_size=200)
@@ -165,7 +128,7 @@ def main():
         sci_preds_ft = ft_clf2.predict(sci_gold_test_ft)
         sci_labels_ft = [ex["label"] for ex in sci_gold_test_ft]
         evaluator.evaluate(sci_preds_ft.tolist(), sci_labels_ft,
-                           f"Legal→Scientific (few-shot n={N_SEEDS})", "scientific")
+                           f"Legal→Scientific (few-shot n={N_SEEDS})", "cross_domain")
 
         try:
             from models.hallucination_classifier import DistilBERTClassifier
@@ -176,7 +139,7 @@ def main():
             )
             sci_preds_distilbert = distilbert_sci.predict(sci_gold_test_ft)
             evaluator.evaluate(sci_preds_distilbert.tolist(), sci_labels_ft,
-                               "Legal→Scientific (few-shot DistilBERT)", "scientific")
+                               "Legal→Scientific (few-shot DistilBERT)", "cross_domain")
         except Exception as exc:
             logger.warning("DistilBERT scientific few-shot skipped: %s", exc)
 
@@ -215,14 +178,9 @@ def main():
     print("\n" + "=" * 70)
     print("CROSS-DOMAIN TRANSFER SUMMARY")
     print("=" * 70)
-    print("Comparing per-domain results …")
-    for domain in ("legal", "medical", "scientific"):
-        try:
-            evaluator.compare_methods(domain)
-        except Exception:
-            pass
+    evaluator.compare_methods("cross_domain")
 
-    print(f"\nResults saved to {RESULTS_DIR}")
+    print(f"\nResults saved to {_cross_domain_dir}")
 
 
 def _make_synthetic_scientific_data(n: int = 400) -> list:
