@@ -50,6 +50,13 @@ def main():
     np.random.seed(RANDOM_SEED)
 
     from evaluation.metrics import HallucinationEvaluator
+    # Remove stale CSV logs so each domain's compare_methods only shows this
+    # run's results — mirrors the cleanup done in run_legal.py (Step 4) and
+    # run_medical.py before the first evaluator.evaluate call.
+    for _domain in ("legal", "medical", "scientific"):
+        _stale_log = os.path.join(RESULTS_DIR, _domain, "evaluation_log.csv")
+        if os.path.exists(_stale_log):
+            os.remove(_stale_log)
     evaluator = HallucinationEvaluator()
 
     # ------------------------------------------------------------------
